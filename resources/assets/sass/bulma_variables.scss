@@ -1,0 +1,42 @@
+// Set your own initial variables
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+// Update blue
+$blue: #72d0eb;
+
+$white: darken(white, 3%);
+
+// $background: #363636;
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default; 
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+
+// table setting 
+$table-background-color: white;
+$table-color: black;
+	
+// Add pink and its invert
+// $pink: #ffb3b3;
+// $pink-invert: #fff;
+// Add a serif family
+$rales: 'raleway';
+$roboto: 'roboto', sans-serif;
+$open_sans: 'Open Sans', sans-serif;
+$overlock: 'Overlock', cursive;	
+$family-serif: "Merriweather", "Georgia", serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $gray-darker;
+$primary-invert: $blue;
+// Use the existing orange as the danger color
+$danger: $orange;
+// Use the new serif family
+$family-primary: $family-serif;
+
+@import "node_modules/bulma/bulma.sass";

@@ -1,0 +1,14 @@
+// 1. Import the initial variables
+@import "node_modules/bulma/sass/utilities/initial-variables";
+
+// Variables
+@import "bulma_variables";
+
+// Bootstrap
+// @import "node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "dom/elements";
+
+@import "dom/generic";
+
+@import "node_modules/font-awesome/scss/font-awesome.scss";

@@ -1,0 +1,292 @@
+body{
+	// padding-top: 1rem;
+    color: black;
+    font-family: $roboto, $open_sans;
+	background-color: darken(white, 1%);
+}
+
+/*=========================================
+=            Navigation styles            =
+=========================================*/
+
+/* Navigation Bar */
+
+@media screen and (min-width: 1008px){
+    .navbar.is-transparent a.navbar-item:hover, 
+    .navbar.is-transparent a.navbar-item.is-active, 
+    .navbar.is-transparent .navbar-link:hover, 
+    .navbar.is-transparent .navbar-link.is-active{
+        color: lighten(#003e7b, 5%);
+    }
+}
+@media screen and (min-width: 1008px){
+    .navbar{
+        min-height: 7.25rem
+    }
+}   
+
+// @media screen and (min-width: 1008px){
+//     .container > .navbar {
+//         margin-left: 0
+//     }
+// }
+
+/* container */
+
+@media screen and (min-width: 1200px){
+    .container{
+        max-width: 1170px;
+        width: 1172px
+    }
+}
+
+.navbar-brand-img img{
+    max-height: 5.85rem;
+
+} 
+
+/* hamburger menu */
+
+.navbar-burger span:nth-child(1){
+    margin-top: -16px    
+}
+
+.navbar-burger span:nth-child(2){
+    margin-top: 14px    
+}
+
+.navbar-burger span:nth-child(3){
+    margin-top: 17px
+}
+
+.navbar-burger span{
+    background-color: $gray-light;
+    height: 4px;
+    width: 56px;
+    margin-left: -16px;
+    position: relative;
+}
+.navbar-burger {
+    height: 5.25rem;
+    width: 6.25rem;
+}
+
+.navbar-burger:hover{
+    background-color: transparent;
+}
+
+/*=====  End  ======*/
+
+
+/*=============================================
+=            Colors            =
+=============================================*/
+
+.white {
+    color: white
+}
+.brand-color {
+    color: $white;
+    background-color: #003e7b
+}
+.original{
+    color: white;
+    background-color: #003e7b
+}
+
+// .material-icons.md-dark { color: rgba(0, 0, 0, 0.54)}
+/*=====  End  ======*/
+
+
+/*=================================
+=            DIVISIONS            =
+=================================*/
+
+.container-content{
+    padding-top: 1.5rem
+}
+
+/* Accordion */
+.accordion {
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: 0.4s;
+}
+.accordion.active, .accordion:hover {
+    background-color: #ddd;
+}
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.accordion.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.accordion-panel {
+    padding: 0 18px;
+    max-height: 0;    
+    background-color: $gray-lighter;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;    
+}
+/* End */
+
+/* Home page divs */
+.party_tents{
+    background-image: url('/images/party_tent.jpg');
+}
+.gazebos{
+    background-image: url('/images/gazebos.jpg');
+}
+.warehouse_tents{
+    background-image: url('/images/warehouse_tent.jpg');
+}
+.accessories{
+    background-image: url('/images/liners.jpg');    
+}
+
+/* Title box */
+.title-box{
+    width: relative;
+    // max-width: 60%;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: white
+}
+
+.visorcard{
+  background: rgba(0,0,0,0.85);
+  border: 0 !important;
+  color: white   
+}
+
+fieldset{
+    border-width: .3px;
+    border-style: solid;
+    border-color: $gray-lighter
+}
+
+
+
+/* Marquee Builder */
+div.steps article {
+    display: none;
+}
+
+div.steps article.active {
+    display: block;
+}
+
+#states {
+    transition: 0.5s all;
+}
+
+#states.paused {
+    opacity: 0.25;
+}
+
+.btn[disabled]{
+    opacity: 0.5;
+    cursor: default;
+}
+
+.btn[disabled]:hover{
+    color:inherit;
+}
+
+.quick-info{
+    padding: .9rem;
+    color: black;
+    font-family: arial;
+    background-color: $gray-lighter;
+    // .level{
+    //     padding: .9rem
+    // }
+}
+
+/*=====  End  ======*/
+
+
+/*==================================
+=            Conditions            =
+==================================*/
+
+.title:not(:last-child), .subtitle:not(:last-child){
+    margin-bottom: 0
+}
+// .party-tent{
+//  background-image: url('/images/party_tent.jpg');
+//     background-repeat: no-repeat;
+//     background-position: center center;  
+//     background-size: cover;
+//     height: 300px
+// }
+
+.gazebos{
+    background-image: url('/images/gazebos.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+    height: 200px
+}
+
+.warehouse_tent{
+    background-image: url('/images/warehouse_tent.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+    height: 200px
+}
+
+// .build_your_own{
+//  background-image: url('/images/blueprint.jpg');
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center; 
+//     height: 400px    
+// }
+
+
+.bg-cover{    
+    background-repeat: no-repeat;
+    // background-position: 75% 25%; 
+    background-size: cover;
+    background-origin: initial;
+    background-position: 30% 70%;     
+    height: 300px    
+}
+
+// imagery backgrounds 
+.bg-byo{
+    background-image: url('/images/blueprint.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%; 
+    background-size: cover;    
+}
+
+.navigation{
+    background-color: white   
+    // lighten(#003e7b, 1%); 
+}
+
+.footer{
+    background-color: #003e7b
+}
+
+.no-padding-top{ 
+  padding-top: -1px
+}
+
+.level{
+    padding-bottom: 0
+}
+/*=====  End ======*/

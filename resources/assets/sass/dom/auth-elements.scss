@@ -1,0 +1,19 @@
+html, 
+body{
+	font-family: raleway;
+	height: 100%;
+	color: white;
+    background-color: desaturate(#003e7b, 5%)
+}
+
+.white{
+	color: white;
+  	font-family: 'Overlock', cursive	
+}
+
+@media screen and (min-width: 769px){
+	.hero.is-large .hero-body {
+	    padding-bottom: 18rem;
+	    padding-top: 2.5rem		
+	}
+}
