@@ -1,15 +1,34 @@
-body
-  color: black
-  font-family: lato
+.input, 
+.textarea
+  -wekbit-box-shadow: none 
+  box-shadow: none
+  border-radius: 0
+  border: 1px solid $gray-light
 
+.subtitle
+  color: black 
+
+.para
+  font-family: $font_elite
+  
 .button
   font-family: arial
   
 .section
   background-color: transparent
+  padding: 0.5rem 0.5rem
   
 .title
-  font-family: 'Overlock', cursive
+  font-family: $lato
+  margin-bottom: .6rem
+
+.subtitle.is-6
+  font-size: 1.15rem
+
+.subtitle.is-6,  
+.title:not(:last-child),
+.subtitle:not(:last-child)
+  margin-bottom: 18px
 
 .input 
   background-color: white
@@ -22,11 +41,10 @@ body
   border: 0 !important
   
 .navbar
-  padding-top: 1rem
-  padding-bottom: 1rem
-  background-color: transparent
+  padding: .5rem 0 .5rem 0
+  background-color: #004a8e
   .white
-    color: black
+    color: white
 
 .level
   padding-top: .5rem
@@ -39,7 +57,7 @@ body
 .navbar-item
    font-size: 18px
    font-weight: 500
-   color: black
+   color: white
    font-family: $roboto, $open_sans   
 
 .breadcrumbs
@@ -66,8 +84,10 @@ body
 
 /*  footer */
 .footer 
+  font-weight: normal
   margin-top: 3em
-  color: white
+  padding: 3rem 1.5rem 2rem
+  color: black
   font-family: $roboto, $open_sans
   .modified
-        color: $white
+        color: black

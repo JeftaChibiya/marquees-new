@@ -17,11 +17,10 @@
         <!-- Add the slick-theme.css if you want default styling -->
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css"/>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.3/css/justifiedGallery.min.css">              
-        <!-- Fonts -->
-{{--         <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,600" rel="stylesheet" type="text/css">
-
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> --}}        
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.3/css/justifiedGallery.min.css" -->              
+        
+        <!-- collagePlus -->        
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/collageplus/0.3.3/css/transitions.min.css"> -->
 
     </head>
     <body>
@@ -36,7 +35,7 @@
 
         @include('partials.footer')
 
-        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ mix('js/app.js') }}"></script>       
         
         <!-- Slick.js -> quick-info div -->        
         <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js"></script>
@@ -50,16 +49,6 @@
               }); 
             });                   
         </script>
-
-{{--         <script src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.3/js/jquery.justifiedGallery.js"></script>
-
-        <script>
-            $("#cat_products").justifiedGallery({
-                margins: 1,
-                rowHeight: 200,
-                captions: false               
-            });            
-        </script> --}}
 
     </body>
 </html>

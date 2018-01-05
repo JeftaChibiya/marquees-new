@@ -47,7 +47,7 @@ class ProductsController extends Controller
 	    public function all()
 	    {
 
-	    	return Product::with('categories')->get();
+	    	return Product::with(['categories','cover','images'])->get();
 
 	    }	    
 
@@ -75,9 +75,10 @@ class ProductsController extends Controller
 	    {
 	    	
 	    	$product = Product::with('images', 'cover')->find($id);
+	    	$categories = $product->categories();
 	    	$attributes = Attribute::all();
 
-	    	return view('product.show', compact('product', 'attributes'));
+	    	return view('product.show', compact('product', 'attributes', 'categories'));
 
 	    }   
 

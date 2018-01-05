@@ -1,50 +1,49 @@
 <div class="quick-info">
   <div class="container">      
-
   <div>
     @if(Request::is('/'))
       <nav class="level is-hidden-mobile">
         <div class="level-left">
-          <p class="level-item subtitle"> 
+          <p class="level-item quick-detail"> 
             <span class="icon">
               <i class="fa fa-credit-card" aria-hidden="true"></i>
             </span> &nbsp;         
-              No credit card fees
+              NO CREDIT CARD FEES
           </p>
         </div>
         <div class="level-center">
-          <p class="level-item subtitle"> 
+          <p class="level-item quick-detail"> 
             <span class="icon">
               <i class="fa fa-handshake-o" aria-hidden="true"></i>
             </span> &nbsp; 
-              Personalised service</p>
+              PERSONALISED SERVICE</p>
         </div>
         <div class="level-right">
-          <p class="level-item subtitle">
+          <p class="level-item quick-detail">
             <span class="icon">
               <i class="fa fa-truck" aria-hidden="true"></i>
             </span> &nbsp; 
-            Fast Delivery</p>
+            FAST DELIVERY</p>
         </div>
       </nav>
 
       <!-- Mobile presentation -->
       <div class="usp-slider is-hidden-desktop">
-        <p class="subtitle is-5 has-text-centered">
+        <p class="has-text-centered quick-detail">
           <span class="icon">
             <i class="fa fa-credit-card" aria-hidden="true"></i>
-          </span> &nbsp;   No Credit Card Fees
+          </span> &nbsp;   NO CREDIT CARD FEES
         </p>
-        <p class="subtitle is-5 has-text-centered">
+        <p class="has-text-centered quick-detail">
             <span class="icon">
               <i class="fa fa-handshake-o" aria-hidden="true"></i>
             </span> &nbsp;     
-            Personalised Service
+            PERSONALISED SERVICE
         </p>
-        <p class="subtitle is-5 has-text-centered">
+        <p class="has-text-centered quick-detail">
             <span class="icon">
               <i class="fa fa-truck" aria-hidden="true"></i>
-            </span> &nbsp;    Fast Delivery
+            </span> &nbsp;    FAST DELIVERY
         </p>
       </div>       
 

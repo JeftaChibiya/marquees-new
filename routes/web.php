@@ -20,6 +20,10 @@ Route::get('/users', 'UsersController@all');
 // Single Item
 Route::get('product/{id}', 'ProductsController@getProduct');
 Route::get('category/{id}', 'CategoriesController@getCategory');
+Route::get('shape/{id}', 'ShapesController@getShape');
+Route::get('custom/{id}', 'ShapesController@customShape');
+Route::get('/shapes', 'ShapesController@getAll');
+Route::get('/shapes-images', 'ShapesController@getAllShapeImages');
 Route::get('category/{id}/products', 'CategoriesController@show')->name('category-products');
 Route::get('product/{id}/show', 'ProductsController@show')->name('show-product');
 Route::get('product/{id}/edit', 'ProductsController@edit')->name('edit-product');
@@ -29,12 +33,15 @@ Route::post('category', 'CategoriesController@store');
 Route::post('products', 'ProductsController@store');
 Route::post('attribute', 'AttributesController@store');
 Route::post('/register-user', 'UsersController@register');
+Route::post('/shape', 'ShapesController@store');
 
 // PATCHING / UPDATING
 Route::patch('/product/{id}', 'ProductsController@update');
 Route::patch('image/{id}', 'ImagesController@update');
-
-Route::post('product/{id}/images', ['as' => 'images_photo_path', 'uses' =>'ImagesController@store']);//add image to product 
+//add image to product 
+Route::post('product/{id}/images', ['as' => 'product_images_path', 'uses' =>'ImagesController@store']);
+//add image to shape
+Route::post('shape/{id}/images', ['as' => 'shape_images_path', 'uses' =>'ShapesController@addImages']); 
 
 // DELETES
 Route::delete('category/{id}', 'CategoriesController@destroy');

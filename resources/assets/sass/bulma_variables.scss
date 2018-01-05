@@ -1,5 +1,5 @@
 // Set your own initial variables
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Merriweather|Dosis|Lato');
 
 // Update blue
 $blue: #72d0eb;
@@ -28,7 +28,10 @@ $rales: 'raleway';
 $roboto: 'roboto', sans-serif;
 $open_sans: 'Open Sans', sans-serif;
 $overlock: 'Overlock', cursive;	
-$family-serif: "Merriweather", "Georgia", serif;
+$family-serif: "Merriweather", sans-serif;
+$dosis: "Dosis", sans-serif;
+$lato: "lato", sans-serif;
+$font_elite: "roboto", sans-serif, "Open Sans", sans-serif;
 
 // 3. Set the derived variables
 // Use the new pink as the primary color
@@ -37,6 +40,6 @@ $primary-invert: $blue;
 // Use the existing orange as the danger color
 $danger: $orange;
 // Use the new serif family
-$family-primary: $family-serif;
+// $family-primary: $family-serif;
 
 @import "node_modules/bulma/bulma.sass";

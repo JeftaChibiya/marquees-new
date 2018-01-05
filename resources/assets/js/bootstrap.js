@@ -5,12 +5,14 @@ import Errors from './utilities/Errors';
 import Slideout from 'slideout';
 // import Slider from 'vue-easy-slider';
 import Slick from 'slick';
+// import collagePlus from './utilities/collagePlus';
 
 window.Form = Form;
 window.Slick = Slick;
 // window.Slider = Slider;
 window.Errors = Errors;
 window.Slideout = Slideout;
+
 window.Vue = require('vue');
 
 

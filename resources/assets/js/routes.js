@@ -48,6 +48,10 @@ let routes = [
 
 	},
 	{
+		path: '/edit-shape/:id/edit', 
+		component: require('./views/EditShape')			
+	},	
+	{
 		path: '/view-product/:id/view', 
 		component: require('./views/ViewProduct')			
 	},	
@@ -55,7 +59,7 @@ let routes = [
 		path: '/view-category/:id/View', 
 		component: require('./views/ViewCategory')
 
-	},
+	},		
 	{
 		path: '/register', 
 		component: require('./views/Register')
@@ -65,7 +69,22 @@ let routes = [
 		path: '/login', 
 		component: require('./views/Login')
 
-	}							
+	},
+	{
+		path: '/shapes', 
+		component: require('./views/Shapes')
+
+	},
+	{
+		path: '/add-shape', 
+		component: require('./views/AddShape')
+
+	},
+	{
+		path: '/custom/:id/shape', 
+		component: require('./views/Custom')
+
+	}											
 ];
 
 export default new VueRouter({	

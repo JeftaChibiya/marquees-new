@@ -18,7 +18,7 @@
                     <div class="media">
                       <figure class="media-left">
                         <p class="image is-128x128"> 
-                          <img src="/images/party/party.png" alt="">                     
+                          <img src="/images/party/party.png" class="img-circle" alt="">                     
                         </p>
                       </figure>                    
                       <div class="media-content">

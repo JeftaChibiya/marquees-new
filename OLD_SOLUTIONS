@@ -1,0 +1,121 @@
+// navbar 
+    <!-- <a class="navbar-item white" href="/byo">
+    PARTIES
+    </a>        
+    <a class="navbar-item white" href="/byo">
+    WAREHOUSE
+    </a> 
+    <a class="navbar-item white" href="/byo">
+    GAZEBOS
+    </a>                         
+    <a class="navbar-item white" href="/byo">
+    ACCESORIES
+    </a>        -->
+
+
+<!-- <div class="navbar-item has-dropdown is-hoverable is-hidden-mobile">
+    <a class="navbar-link white" href="/show-categories">
+    Products
+    </a>
+    <div class="navbar-dropdown is-boxed">
+        @foreach($categories as $category)
+        <a class="navbar-item" href="/category/{{ $category->id }}/products">
+            {{ $category->name }}
+        </a>
+        @endforeach        
+    </div>
+</div> -->
+
+
+{{-- show accordion --}}
+<a class="navbar-item accordion is-hidden-desktop">Products</a>
+    <div class="accordion-panel is-hidden-desktop">
+        @foreach($categories as $category)
+        <a class="navbar-item" href="/category/{{ $category->id }}/products">
+            {{ $category->name }}
+        </a>
+        @endforeach  
+    </div> 
+        
+{{--         <a class="navbar-item white" href="/byo">
+    Bespoke Design
+</a>  --}} 
+
+
+// Added: Thurs 4 Jan 2018
+<!-- photoset-grikd js -->        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoset-grid/1.0.1/jquery.photoset-grid.min.js"></script>
+
+<script>
+    $('.photoset-grid-custom').photosetGrid({
+        // Set the gutter between columns and rows
+        // gutter: '5px',
+        // Manually set the grid layout
+        layout: '21',
+        // Wrap the images in links
+        highresLinks: true,
+        // Asign a common rel attribute
+        // rel: 'print-gallery',
+
+        onInit: function(){},
+        onComplete: function(){
+        // Show the grid after it renders
+        $('.photoset-grid-custom').attr('style', '');
+        }
+    });            
+</script>  
+
+
+// Added: Thurs 4 Jan 2018
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.0/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+<script>
+    // init Masonry
+    var $grid = $('.grid').masonry({
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    columnWidth: '.grid-sizer',
+    horizontalOrder: true,
+    fitWidth: true
+    });
+    // layout Masonry after each image loads
+    $grid.imagesLoaded().progress( function() {
+    $grid.masonry();
+    });  
+</script>
+
+<script>
+    $(window).load(function() {
+        $('.collage').collagePlus({
+            'targetHeight': 300
+        });
+    });          
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.3/js/jquery.justifiedGallery.js"></script>
+
+<script>
+    $("#cat_products").justifiedGallery({
+        margins: 1,
+        rowHeight: 200,
+        captions: false               
+    });            
+</script>
+
+// added Thurs 4 Jan 2018
+<script>
+    $(document).ready(function(){
+    $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
+
+        var target = this.hash;
+        var $target = $(target);
+
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 900, 'swing');
+    });
+    });          
+</script>

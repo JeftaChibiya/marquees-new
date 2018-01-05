@@ -8,7 +8,7 @@
 
 <div class="container">
   <div class="container-content">
-	<p class="title is-3">@{{ product.name }}</p><br/>
+	<p class="title is-3">@{{ product.name }} </p><br/>
 
 	<div class="tile is-ancestor">
 	  <div class="tile is-parent is-8">

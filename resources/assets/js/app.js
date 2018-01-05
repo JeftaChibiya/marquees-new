@@ -15,9 +15,12 @@ Vue.component('imgSlider', require('./components/ImageSlider.vue'));
 
 Vue.component('productShow', require('./components/ProductShow.vue'));
 
-Vue.component('multi-step', require('./components/MultiStep.vue'));
+// Vue.component('multi-step', require('./components/MultiStep.vue'));
 
 Vue.component('modal', require('./components/Modal.vue'));
+Vue.component('builder', require('./components/Builder.vue'));
+Vue.component('tabs', require('./components/Tabs.vue'));
+Vue.component('tab', require('./components/Tab.vue'));
 
 /**
  *  A Vue application instance 
@@ -35,30 +38,6 @@ new Vue({
 });
 
 
-/*===================================
-=            Switch USPs            =
-===================================*/
-
-/*=====  End of Switch USPs  ======*/
-
-
-/*=============================================
-  =  Listening for media query changes - quick-info / USPs on homepage =
-=============================================*/
-
- /* JavaScript Media Queries */
-
-var this_usp = document.getElementById("current_usp");
-
-if (window.matchMedia("(min-width: 720px)").matches) {   
-  // what happens
-} 
-
-
-// WidthChange(mq);
-
-/*=====  End  ======*/
-  
 
 /*=================================
   =  Accordion - Hamburger menu    =

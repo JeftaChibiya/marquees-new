@@ -1,43 +1,33 @@
+/*===================================
+=            body & html            =
+===================================*/
+
 body{
-	// padding-top: 1rem;
+    // padding-top: 1rem;
     color: black;
-    font-family: $roboto, $open_sans;
-	background-color: darken(white, 1%);
+    counter-reset: item; 
+    font-weight: 100;       
+    font-family: $family-serif;
+    background-color: darken(white, 1%);
 }
+
+.content-para{
+    color: #585858;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/*=====  End of body & html  ======*/
+
+
 
 /*=========================================
 =            Navigation styles            =
 =========================================*/
 
-/* Navigation Bar */
-
-@media screen and (min-width: 1008px){
-    .navbar.is-transparent a.navbar-item:hover, 
-    .navbar.is-transparent a.navbar-item.is-active, 
-    .navbar.is-transparent .navbar-link:hover, 
-    .navbar.is-transparent .navbar-link.is-active{
-        color: lighten(#003e7b, 5%);
-    }
-}
-@media screen and (min-width: 1008px){
-    .navbar{
-        min-height: 7.25rem
-    }
-}   
-
-// @media screen and (min-width: 1008px){
-//     .container > .navbar {
-//         margin-left: 0
-//     }
-// }
-
-/* container */
-
-@media screen and (min-width: 1200px){
-    .container{
-        max-width: 1170px;
-        width: 1172px
-    }
+.breadcrumb.has-succeeds-separator li + li:before{
+    content: "\f105";
+    font-family: "FontAwesome"
 }
 
 .navbar-brand-img img{
@@ -87,7 +77,7 @@ body{
 }
 .brand-color {
     color: $white;
-    background-color: #003e7b
+    background-color: desaturate(#003e7b, 10%)
 }
 .original{
     color: white;
@@ -95,16 +85,26 @@ body{
 }
 
 // .material-icons.md-dark { color: rgba(0, 0, 0, 0.54)}
-/*=====  End  ======*/
+/*=====  End of colors ======*/
+
 
 
 /*=================================
 =            DIVISIONS            =
 =================================*/
 
-.container-content{
-    padding-top: 1.5rem
+.overlay{
+    position: relative; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    color: white;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    // z-index: 2;
+    .subtitle{
+        color: white
+    }
 }
+
 
 /* Accordion */
 .accordion {
@@ -151,6 +151,18 @@ body{
 .accessories{
     background-image: url('/images/liners.jpg');    
 }
+.real_parties{
+    background-image: url('/images/party/4.jpg')
+}
+.bg_request{
+    background-image: url('/images/liners.jpg')
+}
+.category-intro{
+    padding: 3% 0;
+    display: flex;
+    align-items: flex-end;    
+    // background-image: url('/images/party/cat_party.jpg');    
+}
 
 /* Title box */
 .title-box{
@@ -159,7 +171,7 @@ body{
     position: relative;
     top: 0;
     left: 0;
-    padding: 1rem;
+    padding: .3rem;
     background-color: white
 }
 
@@ -174,8 +186,6 @@ fieldset{
     border-style: solid;
     border-color: $gray-lighter
 }
-
-
 
 /* Marquee Builder */
 div.steps article {
@@ -204,47 +214,147 @@ div.steps article.active {
 }
 
 .quick-info{
-    padding: .9rem;
+    padding: .5rem 0 .5rem .5rem; // top, right, bottom, left
     color: black;
     font-family: arial;
     background-color: $gray-lighter;
-    // .level{
-    //     padding: .9rem
-    // }
+    .quick-detail{
+        font-size: 15px
+    }
 }
 
-/*=====  End  ======*/
+/*=====  End of Divisions ======*/
+
+
+
+/*========================
+=       Imagery         =
+========================*/
+.img-circle{
+    border-radius: 50%
+}
+
+
+/*=====  End of Imagery ======*/
+
+
+/*==============================
+=            INPUTS            =
+==============================*/
+input[type=text]:focus {
+    background-color: $gray-lighter;
+}
+/*=====  End of INPUTS  ======*/
 
 
 /*==================================
 =            Conditions            =
 ==================================*/
 
-.title:not(:last-child), .subtitle:not(:last-child){
-    margin-bottom: 0
+/* Navigation Bar */
+
+@media screen and (min-width: 1008px){
+    .navbar.is-transparent a.navbar-item:hover, 
+    .navbar.is-transparent a.navbar-item.is-active, 
+    .navbar.is-transparent .navbar-link:hover, 
+    .navbar.is-transparent .navbar-link.is-active{
+        color: white
+    }
 }
-// .party-tent{
-//  background-image: url('/images/party_tent.jpg');
-//     background-repeat: no-repeat;
-//     background-position: center center;  
-//     background-size: cover;
-//     height: 300px
+@media screen and (min-width: 1008px){
+    .navbar{
+        min-height: 7.25rem
+    }
+}   
+
+// @media screen and (min-width: 1008px){
+//     .container > .navbar {
+//         margin-left: 0
+//     }
 // }
 
-.gazebos{
-    background-image: url('/images/gazebos.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center; 
-    height: 200px
+/*----------  .container  ----------*/
+@media screen and (min-width: 1200px){
+    .container{
+        max-width: 1200px;
+        width: 1190px
+    }
 }
 
-.warehouse_tent{
-    background-image: url('/images/warehouse_tent.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center; 
-    height: 200px
+/*----------  .container-content  ----------*/
+@media screen and (min-width: 1200px){
+    .container-content{
+        padding-top: 1.5rem;   
+    }
+}
+@media screen and (max-width: 1024px){
+    .container-content{
+        padding: 1.5rem;   
+    }
+}
+
+/*----------  sections  ----------*/
+.overview-section{
+    height: 250px
+}
+
+
+/*----------  Ordered Lists  ----------*/
+li{
+    list-style-type: none
+}
+ ol {
+   list-style: none;
+     li {
+       counter-increment: item;
+       margin-bottom: 5px;
+     }
+     li:before {
+       margin-right: 10px;
+       margin-bottom: .6rem;       
+       content: counter(item);
+       background: lighten(#003e7b, 10%);
+       border-radius: 100%;
+       color: white;
+       width: 1.2em;
+       text-align: center;
+       display: inline-block;
+     }   
+ }
+
+/*----------  .grid  ----------*/
+
+
+// .grid {
+//   background: #DDD;
+// }
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+
+.grid-item {
+  float: left;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+
+.title:not(:last-child), .subtitle:not(:last-child){
+    margin-bottom: 0
 }
 
 // .build_your_own{
@@ -258,11 +368,19 @@ div.steps article.active {
 
 .bg-cover{    
     background-repeat: no-repeat;
-    // background-position: 75% 25%; 
     background-size: cover;
     background-origin: initial;
     background-position: 30% 70%;     
     height: 300px    
+}
+
+.bg-center{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: initial;
+    background-position: 50% 50%;
+    background-origin: content-box;
+    height: 300px       
 }
 
 // imagery backgrounds 
@@ -279,7 +397,12 @@ div.steps article.active {
 }
 
 .footer{
-    background-color: #003e7b
+    background-color: #ecf0f1
+    // #003e7b
+}
+#bd-footer{
+    margin-top: 60%;
+    background-color: #003e7b    
 }
 
 .no-padding-top{ 
@@ -289,4 +412,87 @@ div.steps article.active {
 .level{
     padding-bottom: 0
 }
-/*=====  End ======*/
+
+/*=====  End of Conditions ======*/
+
+
+/*=============================================
+=            Helpers            =
+=============================================*/
+
+
+/*----------  Margin & Padding  ----------*/
+.pad_title{
+    padding-bottom: 1rem
+}
+
+.overflow-wrap {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/*----------  Font size / color ----------*/
+.open-sans{
+    font-family: $open-sans
+}
+.roboto{
+    font-family: $roboto
+}
+.overlock{
+    font-family: $overlock
+}
+
+.is_roboto{
+    font-family: "roboto", sans-serif, "Open Sans", sans-serif;
+    font-size: 23px;
+    font-weight: 600
+}
+
+.is_lato{
+    font-family: "lato", sans-serif;
+    font-size: 22px;
+    font-weight: normal
+}
+
+/*----------  color  ----------*/
+
+/*----------  more ...  ----------*/
+
+.count-number{
+    color: #404040;
+    font-size: 20px;
+    font-weight: 600;
+    width: 40px;
+    height: 40px; 
+    border-radius: 50%;
+    background:#eeeeee;
+    .count-number > span{
+        display: inline;
+    }
+}
+
+
+/*----------  Flex positioning ----------*/
+
+.center-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.center-vertically{
+    display: flex;
+    align-content: center;   
+}
+  
+.align-item-top {
+    align-self: flex-start;
+}
+
+.align-item-bottom {
+    align-self: flex-end;
+}
+
+/*=====  End of Helpers  ======*/
+

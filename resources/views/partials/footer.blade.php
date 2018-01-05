@@ -2,10 +2,14 @@
   <div class="container"> 
     <div class="footer-content">
       <div class="columns">
-       {{-- contact us --}}
+       <!-- contact us  -->
         <div class="column is-3">
-          <p class="subtitle modified"><b>Contact our customer service</b></p>
-          <ul>
+          <p class="subtitle modified"><b>European ITM Marquees Head office</b></p><br/>
+          Wellington House<br/>
+          273-275 High Street<br/>
+          London
+          AL2 1HA       
+          <ul> <br/>        
             <li>
               <span class="icon">
                 <i class="fa fa-home"></i>
@@ -22,9 +26,10 @@
             <li></li>
           </ul>
         </div>
-        {{-- quick links  --}}
+        <!-- quick links   -->
         <div class="column is-3">
           <p class="subtitle modified"><b>Quick Links</b></p>
+          <br/>
           <ul>
             <li>
               <span class="icon">
@@ -58,9 +63,9 @@
             </li>                        
           </ul>
         </div>
-        {{-- help & support --}}
+        <!-- help & support  -->
         <div class="column is-3">
-          <p class="subtitle modified"><b>Help & Support</b></p>     
+          <p class="subtitle modified"><b>Help & Support</b></p><br/>     
             <li>
                 Customer Support
             </li>
@@ -72,9 +77,9 @@
             </li>                       
           </ul>             
         </div>
-        {{-- accreditations --}}
+        <!-- accreditations  -->
         <div class="column is-3">
-          <p class="subtitle modified"><b>Accredited by</b></p>        
+          <p class="subtitle modified"><b>Accredited by</b></p><br/>        
         </div>        
         </div> 
       </div>     

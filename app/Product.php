@@ -45,6 +45,19 @@ class Product extends Model
 
 
 	/**
+	 * [getCategoriesIds description]
+	 * 
+	 * @return [type] [description]
+	 */
+	public function getCategoriesIds()
+	{
+
+		return $this->categories->select('id')->where('id' ,'>' ,0)->lists('id')->toArray();
+
+	}
+
+
+	/**
 	 * [category description]
 	 * 
 	 *  Product has many embedded Images

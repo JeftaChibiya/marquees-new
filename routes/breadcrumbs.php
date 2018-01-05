@@ -32,10 +32,14 @@ Breadcrumbs::register('show-product', function($breadcrumbs, $id)
 {   
     
     $product = Product::findOrFail($id);
-    $category = Category::findOrFail($id);
+    // $category = $product->categories;
+
+    foreach($product->categories as $category){
+        $category;
+    }
 
     $breadcrumbs->parent('category-products', $category->id);
-    $breadcrumbs->push(ucfirst($product->name), route('show-product', $product));
+    $breadcrumbs->push(ucfirst($product->name), route('show-product', $product->id));
 
 });
 

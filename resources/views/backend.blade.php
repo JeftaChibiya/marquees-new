@@ -50,7 +50,9 @@
                     <router-link tag="li" to="/attributes" class="white" exact>
                         <a class="white">Attributes</a>
                     </router-link> 
-                                       
+                    <router-link tag="li" to="/shapes" class="white" exact>
+                        <a class="white">Shapes</a>
+                    </router-link>                                        
                 </ul>
            </section>
 
