@@ -167,7 +167,6 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-        Jenssegers\Mongodb\MongodbServiceProvider::class,  // for use in the near future
         Intervention\Image\ImageServiceProvider::class,      
         Collective\Html\HtmlServiceProvider::class, 
         // generate breadcrumbs
