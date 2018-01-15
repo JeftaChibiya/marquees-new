@@ -9023,6 +9023,115 @@ body {
 =            Navigation styles            =
 =========================================*/
 
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 230px;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  min-height: 100vh;
+  overflow-y: scroll;
+  background-color: #ecf0f1;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu .navbar-item {
+  color: black;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  background-color: #FFF;
+  /* A background-color is required */
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+.panel:before {
+  content: '';
+  display: block;
+  background-color: transparent;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.panel-open:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
 .breadcrumb.has-succeeds-separator li + li:before {
   content: "\F105";
   font-family: "FontAwesome";
@@ -9047,16 +9156,17 @@ body {
 }
 
 .navbar-burger span {
-  background-color: #777777;
+  background-color: #d9d9d9;
   height: 4px;
   width: 56px;
-  margin-left: -16px;
   position: relative;
 }
 
 .navbar-burger {
   height: 5.25rem;
   width: 6.25rem;
+  position: absolute;
+  right: 20px;
 }
 
 .navbar-burger:hover {
@@ -9089,6 +9199,27 @@ body {
 =            DIVISIONS            =
 =================================*/
 
+@media screen and (min-width: 480px) {
+  .home-intro {
+    height: 75vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-intro {
+    height: 30vh;
+  }
+}
+
+.home-intro {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-size: 100% auto;
+  background-origin: center;
+  background-image: url("/images/home-intro-bg3.jpg");
+}
+
 .overlay {
   position: relative;
   /* Sit on top of the page content */
@@ -9097,7 +9228,7 @@ body {
   height: 100%;
   /* Full height (cover the whole page) */
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   /* Black background with opacity */
 }
 
@@ -9158,7 +9289,7 @@ body {
 }
 
 .warehouse_tents {
-  background-image: url("/images/warehouse_tent.jpg");
+  background-image: url("/images/warehs_tent.jpg");
 }
 
 .accessories {
@@ -9171,6 +9302,10 @@ body {
 
 .bg_request {
   background-image: url("/images/liners.jpg");
+}
+
+.bespoke_designs {
+  background-image: url("/images/blueprint.jpg");
 }
 
 .category-intro {
@@ -9432,6 +9567,10 @@ ol li:before {
   padding-bottom: 1rem;
 }
 
+.padding-all {
+  padding: 1.3rem;
+}
+
 .overflow-wrap {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -9452,6 +9591,12 @@ ol li:before {
 
 .overlock {
   font-family: "Overlock", cursive;
+}
+
+.control-text {
+  font-family: arial;
+  font-weight: 900;
+  color: #737373;
 }
 
 .is_roboto {
@@ -9502,8 +9647,9 @@ ol li:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .align-item-top {
@@ -9529,6 +9675,8 @@ ol li:before {
 
 .subtitle {
   color: black;
+  font-family: "lato", sans-serif;
+  font-weight: 500;
 }
 
 .para {
@@ -9547,6 +9695,10 @@ ol li:before {
 .title {
   font-family: "lato", sans-serif;
   margin-bottom: .6rem;
+}
+
+.subtitle.is-3 {
+  font-size: 1.85rem;
 }
 
 .subtitle.is-6 {
@@ -9593,10 +9745,10 @@ ol li:before {
 }
 
 .navbar-item {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   color: white;
-  font-family: "roboto", sans-serif, "Open Sans", sans-serif;
+  font-family: "lato", sans-serif;
 }
 
 .breadcrumbs {

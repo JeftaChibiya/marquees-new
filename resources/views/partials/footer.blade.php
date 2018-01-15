@@ -79,7 +79,8 @@
         </div>
         <!-- accreditations  -->
         <div class="column is-3">
-          <p class="subtitle modified"><b>Accredited by</b></p><br/>        
+          <p class="subtitle modified"><b>Accredited by</b></p><br/>  
+           <img src="/images/credits.jpg" alt="">      
         </div>        
         </div> 
       </div>     

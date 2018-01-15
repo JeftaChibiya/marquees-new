@@ -3,13 +3,14 @@
 ===================================*/
 
 body{
-    // padding-top: 1rem;
+    // padding-top: 1rem;  
     color: black;
     counter-reset: item; 
     font-weight: 100;       
     font-family: $family-serif;
     background-color: darken(white, 1%);
 }
+
 
 .content-para{
     color: #585858;
@@ -24,6 +25,111 @@ body{
 /*=========================================
 =            Navigation styles            =
 =========================================*/
+
+.slideout-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 230px;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-height: 100vh;
+    overflow-y: scroll;
+    background-color: #ecf0f1;
+    -webkit-overflow-scrolling: touch;
+    z-index: 0;
+    display: none;
+
+    .navbar-item {
+        color: black
+    }
+  }
+  
+  .slideout-menu-left {
+    left: 0;
+  }
+
+  .slideout-menu-right {
+    right: 0;
+  }
+  
+  .slideout-panel {
+    position: relative;
+    z-index: 1;
+    // will-change: transform;
+    background-color: #FFF; /* A background-color is required */
+    min-height: 100vh;
+  }
+  
+  .slideout-open,
+  .slideout-open body,
+  .slideout-open .slideout-panel {
+    overflow: hidden;
+  }
+  
+  .slideout-open .slideout-menu {
+    display: block;
+  }
+  
+  .panel:before {
+    content: '';
+    display: block;
+    background-color: rgba(0,0,0,0);
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  .panel-open:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 99;
+  }
+  
+  // end of slideout menu specs
+
+// navbar-background: #004A7C
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 
 .breadcrumb.has-succeeds-separator li + li:before{
     content: "\f105";
@@ -50,15 +156,16 @@ body{
 }
 
 .navbar-burger span{
-    background-color: $gray-light;
+    background-color: #d9d9d9;
     height: 4px;
     width: 56px;
-    margin-left: -16px;
-    position: relative;
+    position: relative
 }
 .navbar-burger {
     height: 5.25rem;
     width: 6.25rem;
+    position: absolute;
+    right: 20px    
 }
 
 .navbar-burger:hover{
@@ -93,12 +200,41 @@ body{
 =            DIVISIONS            =
 =================================*/
 
+@media screen and (min-width: 480px){
+    .home-intro{
+        height: 75vh;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .home-intro{
+        height: 30vh;
+    }
+}
+
+.home-intro{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-size: 100% auto;     
+    background-origin: center;
+    background-image: url('/images/home-intro-bg3.jpg')
+    // background-position: 30% 34%;
+    // .home-intro-brand{
+    //     position: absolute;
+    //     left: 0;
+    //     right: 0;
+    //     top: 50%;
+    //     text-align: center
+    // }        
+}
+
 .overlay{
     position: relative; /* Sit on top of the page content */
     width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     color: white;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    background-color: rgba(0,0,0,0.3); /* Black background with opacity */
     // z-index: 2;
     .subtitle{
         color: white
@@ -146,7 +282,7 @@ body{
     background-image: url('/images/gazebos.jpg');
 }
 .warehouse_tents{
-    background-image: url('/images/warehouse_tent.jpg');
+    background-image: url('/images/warehs_tent.jpg');
 }
 .accessories{
     background-image: url('/images/liners.jpg');    
@@ -157,6 +293,11 @@ body{
 .bg_request{
     background-image: url('/images/liners.jpg')
 }
+
+.bespoke_designs{
+    background-image: url('/images/blueprint.jpg')
+}
+
 .category-intro{
     padding: 3% 0;
     display: flex;
@@ -426,6 +567,10 @@ li{
     padding-bottom: 1rem
 }
 
+.padding-all{
+    padding: 1.3rem
+}
+
 .overflow-wrap {
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -441,6 +586,12 @@ li{
 }
 .overlock{
     font-family: $overlock
+}
+
+.control-text{
+    font-family: arial;
+    font-weight: 900;
+    color: #737373
 }
 
 .is_roboto{
@@ -483,7 +634,7 @@ li{
 
 .center-vertically{
     display: flex;
-    align-content: center;   
+    align-items: center; 
 }
   
 .align-item-top {

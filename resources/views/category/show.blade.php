@@ -34,13 +34,13 @@
           @endforeach
        </div>        
 
-       <div class="has-text-centered">
-         <button class="button is-dark"> view more &nbsp;
-            <span class="icon">
-              <i class="fa fa-angle-down" aria-hidden="true"></i>
-            </span>
-         </button>
-       </div> <br/> 
+       @if(count($products) > 4)
+        <div class="has-text-centered control-text">
+          <b>SHOW MORE</b> 
+        </div> 
+       @endif
+
+       <br/> 
 
         <div class="columns">
           <div class="column is-8">

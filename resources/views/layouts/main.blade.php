@@ -25,17 +25,80 @@
     </head>
     <body>
 
-        <div id="app">
-            @include('partials.navbar')
-              @include('partials.quick-info')
-            <div>
-                @yield('content')
-            </div>                       
+        <div id="app">          
+            <div id="right-side-menu" class="slideout-menu slideout-menu-right">
+                <p class="subtitle is-4">Our Designs</p>
+                <ul>
+                @foreach($categories as $category)
+                    <li>
+                        <a class="navbar-item" href="/category/{{ $category->id }}/products">
+                            {{ strtoupper($category->name) }}
+                        </a>                            
+                    </li>
+                @endforeach                     
+                </ul>
+                <br/>
+                <p class="subtitle is-4">Get in touch</p>
+                <ul>
+                    <li>
+                        <a class="navbar-item" href="/contact-us">
+                            Contact
+                        </a>                        
+                    </li>
+                    <li>
+                        <a class="navbar-item" href="/help">
+                            <span class="icon">
+                            <i class="fa fa-info-circle"></i>
+                            </span> Help
+                        </a>                        
+                    </li>
+                </ul>
+            </div>       
+            <main id="panel" class="slideout-panel panel">
+            @include('partials.navbar')             
+                @include('partials.quick-info')
+                <div>
+                    @yield('content')
+                </div> 
+            </main>
         </div>    
 
         @include('partials.footer')
 
-        <script src="{{ mix('js/app.js') }}"></script>       
+        <script src="{{ mix('js/app.js') }}"></script> 
+
+    <script>
+        window.Slideout;
+
+        document.querySelector('.navbar-burger').addEventListener('click', function() {
+            slideout.toggle();
+        });
+
+        function close(event) {
+            event.preventDefault();
+            slideout.close();
+        } 
+
+        // slideout panel - admin
+        var slideout = new Slideout({
+            'panel': document.getElementById('panel'),
+            'menu': document.getElementById('right-side-menu'),
+            'padding': 230,
+            'tolerance': 70
+        });
+
+        slideout
+            .on('beforeopen', function() {
+            this.panel.classList.add('panel-open');
+            })
+            .on('open', function() {
+            this.panel.addEventListener('click', close);
+            })
+            .on('beforeclose', function() {
+            this.panel.classList.remove('panel-open');
+            this.panel.removeEventListener('click', close);
+        });           
+    </script>             
         
         <!-- Slick.js -> quick-info div -->        
         <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js"></script>

@@ -133,7 +133,7 @@
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
 
-{{--     <script>
+    <script>
       window.Slideout;
 
       document.querySelector('.toggle-button').addEventListener('click', function() {
@@ -164,7 +164,7 @@
           this.panel.classList.remove('panel-open');
           this.panel.removeEventListener('click', close);
       });           
-    </script> --}}
+    </script>
     
 </body>
 </html>

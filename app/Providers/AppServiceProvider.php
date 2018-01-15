@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer(['partials.navbar', 'partials.bd-navbar'], function($view) {
+        view()->composer(['partials.navbar', 'partials.bd-navbar', 'layouts.main'], function($view) {
             
             $categories = \App\Category::all();
             $view->with(compact('categories')); // share variable categories
