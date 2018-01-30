@@ -1,101 +1,102 @@
-body{
-	font-family: $roboto, $open_sans;
-	color: black;
-	width: 100%;
-	height: 100%;
+body {
+    font-family: $roboto, $open_sans;
+    color: black;
+    width: 100%;
+    height: 100%;
 }
 
-.notice{
-  margin-bottom: .8rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+.notice {
+    margin-bottom: .8rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
 }
+
 // slideout menu specs
 .menu-section,
-.menu-section-list{
-  font-family: $roboto, $open_sans;
+.menu-section-list {
+    font-family: $roboto, $open_sans;
 }
 
-.menu-section{
-  margin-top: 1.5rem
+.menu-section {
+    margin-top: 1.5rem
 }
 
-.menu-section-list{
-  margin-top: .6rem;
-  font-size: 18px
+.menu-section-list {
+    margin-top: .6rem;
+    font-size: 18px
 }
 
-.menu-section-list > li{
-  margin: .35rem;
+.menu-section-list>li {
+    margin: .35rem;
 }
 
 .slideout-menu {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 230px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  min-height: 100vh;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  z-index: 0;
-  display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 230px;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    min-height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 0;
+    display: none;
 }
 
 .slideout-menu-left {
-  left: 0;
+    left: 0;
 }
 
 .slideout-panel {
-  position: relative;
-  z-index: 1;
-  // will-change: transform;
-  background-color: #FFF; /* A background-color is required */
-  min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    // will-change: transform;
+    background-color: #FFF;
+    /* A background-color is required */
+    min-height: 100vh;
 }
 
 .slideout-open,
 .slideout-open body,
 .slideout-open .slideout-panel {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .slideout-open .slideout-menu {
-  display: block;
+    display: block;
 }
 
 .panel:before {
-  content: '';
-  display: block;
-  background-color: rgba(0,0,0,0);
-  transition: background-color 0.5s ease-in-out;
+    content: '';
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s ease-in-out;
 }
 
 .panel-open:before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0,0,0,.5);
-  z-index: 99;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 99;
 }
 
 // end of slideout menu specs
-
-
-.white{
-	color: white;
+.white {
+    color: white;
 }
 
-.original{
-  color: white;
-  background-color: #003e7b
+.original {
+    color: white;
+    background-color: #003e7b
 }
 
-@media screen and (min-width: 769px){
-	.hero.is-large .hero-body {
-	    padding-bottom: 18rem;
-	    padding-top: 10rem		
-	}
+@media screen and (min-width: 769px) {
+    .hero.is-large .hero-body {
+        padding-bottom: 18rem;
+        padding-top: 10rem
+    }
 }

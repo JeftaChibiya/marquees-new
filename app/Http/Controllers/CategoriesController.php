@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Storage;
 use App\Category;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,86 @@ class CategoriesController extends Controller
 	    	
 	    	return Category::all();
 
-	    } 	    
+		} 	
+		
+		
+		/**
+	     * Create
+	     * 
+	     * @return [type] [description]
+	     */
+	    public function create()
+	    {
+	    	
+	    	return view('category.create');
+
+		} 		
+		
+
+		/**
+	     * Edit
+	     * 
+	     * @return [type] [description]
+	     */
+	    public function edit($id)
+	    {
+			
+			$category = Category::find($id);
+
+	    	return view('category.edit', compact('category'));
+
+		} 
+		
+		/**
+	     * View
+	     * 
+	     * @return [type] [description]
+	     */
+	    public function view($id)
+	    {
+			
+			$category = Category::find($id);
+
+	    	return view('category.view', compact('category'));
+
+		}		
+		
+
+		/**
+	     * Update
+	     * 
+	     * @return [type] [description]
+	     */
+	    public function update($id, Request $request)
+	    {
+			$category = Category::find($id);
+
+			$category->fill($request->except('cover_image'));
+						
+			// $category->name = $request->input('name');
+			// $category->brief_desc = $request->input('brief_desc');
+
+			if($request->hasFile('cover_image'))
+			{
+				$image = $request->file('cover_image');
+				// name = time + original file name
+				$filename = time() . '_' . $image->getClientOriginalName();
+				// store in this folder
+				$image->storeAs('/cover_images/categs',  $filename, 'uploads');
+				// get old file 
+				$oldCoverImg = $category->cover_image;
+				
+				$category->cover_image = $filename;
+
+				// delete the old file from the disk
+				Storage::delete($oldCoverImg);
+			}
+			
+			$category->save();
+
+	    	return back();
+
+	    } 		
 
 
 	    /**
@@ -57,10 +137,30 @@ class CategoriesController extends Controller
 	     */
 	    public function store(Request $request)
 	    {
-	    	
-	    	$category = Category::create($request->all());
+			$category = new Category;
 
-	    	return $category;
+			$category->name = $request->input('name');
+			$category->brief_desc = $request->input('brief_desc');
+			
+
+			if($request->hasFile('cover_image'))
+			{
+
+				$cover_image = $request->file('cover_image');
+				// name = time + original file name
+				$filename = time() . '_' . $cover_image->getClientOriginalname();
+				// store in this folder
+				$cover_image->storeAs('/cover_images/categs',  $filename, 'uploads');
+
+				$category->cover_image = $filename;
+
+			}
+
+			// see: https://laracasts.com/discuss/channels/laravel/symbolic-link
+
+			$category->save();
+
+			return redirect()->route('manage-categs', [$category]);
 
 	    }	 
 
@@ -87,9 +187,9 @@ class CategoriesController extends Controller
 	    {
 	    	
 	    	$category = Category::find($id);
-	    	$products = $category->products;
+	    	// $products = $category->products;
 
-	    	return view('category.show', compact('products', 'category'));
+	    	return view('category.show', compact('category'));
 
 	    }    	      
 

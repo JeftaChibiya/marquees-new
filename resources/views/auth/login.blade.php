@@ -6,24 +6,36 @@
         <div class="hero-body">
             <div class="container">
                 <div class="title has-text-centered">
-                    <img src="/images/brand/backend-logo.svg" alt="logo" style="width: auto; height: 175px">
+                    <img src="/images/branding/22-login.svg" alt="logo" style="width: 105px; height: auto">
                 </div>
                 <div class="columns">
                     <div class="column"></div>
-                    <div class="column is-one-quarter">
+                    <div class="column is-3">
+                            <p class="subtitle is-4 lato black">Sign in</p>
                             <form action="{{ route('login') }}" method="POST">
                                 {{ csrf_field() }}                                
                                 <div class="field">
-                                    <label>Email:</label>
-                                    <input type="text" class="input" name="email" placeholder="johndoe@mail.com">
+                                    <input type="text" class="input" name="email" placeholder="Email">
                                 </div>
                                 <div class="field">
-                                    <label>Password:</label>
-                                    <input type="text" class="input" name="password" placeholder="******">                            
+                                    <input type="text" class="input" name="password" placeholder="Password">                            
                                 </div>  
+
                                 <div class="field">
-                                    <button class="button is-success is-medium" type="submit">SIGN IN</button>
-                                </div>                  
+                                    
+                                </div>  
+
+                                <div class="field is-grouped">
+                                    <p class="control">
+                                        <button class="button is-success is-rounded" type="submit">Sign in</button>
+                                    </p>
+                                    <p class="control">
+                                        <a class="is-link-success">
+                                        Forgot password?
+                                        </a>
+                                    </p>
+                                </div>                                
+
                             </form>
                     </div>
                     <div class="column"></div>                    

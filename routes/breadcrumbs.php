@@ -51,10 +51,10 @@ Breadcrumbs::register('byo', function($breadcrumbs)
 });
 
 // Home > Contact page
-Breadcrumbs::register('contact', function($breadcrumbs)
+Breadcrumbs::register('contact.create', function($breadcrumbs)
 {
     $breadcrumbs->parent('/');
-    $breadcrumbs->push('Contact', route('contact'));
+    $breadcrumbs->push('Contact', route('contact.create'));
 });
 
 // Home > Help page

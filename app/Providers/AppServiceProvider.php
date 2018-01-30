@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,13 @@ class AppServiceProvider extends ServiceProvider
             $view->with(compact('categories')); // share variable categories
 
         });
+
+        view()->composer('auth.passwords.verify-password', function($view) {
+            
+            $user = Auth::user();
+            $view->with(compact('user')); // share variable categories
+
+        });        
     }
 
     /**

@@ -27,7 +27,7 @@
 
         <div id="app">          
             <div id="right-side-menu" class="slideout-menu slideout-menu-right">
-                <p class="subtitle is-4">Our Designs</p>
+                <p class="subtitle is-4">MENU</p>
                 <ul>
                 @foreach($categories as $category)
                     <li>
@@ -38,7 +38,7 @@
                 @endforeach                     
                 </ul>
                 <br/>
-                <p class="subtitle is-4">Get in touch</p>
+                <p class="subtitle is-5"> <b>Get in touch</b> </p>
                 <ul>
                     <li>
                         <a class="navbar-item" href="/contact-us">
@@ -84,7 +84,8 @@
             'panel': document.getElementById('panel'),
             'menu': document.getElementById('right-side-menu'),
             'padding': 230,
-            'tolerance': 70
+            'tolerance': 70,
+            'side': 'right'
         });
 
         slideout

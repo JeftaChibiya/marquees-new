@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
     
+    
     /**
      * [all description]
      * 
@@ -21,9 +22,56 @@ class UsersController extends Controller
 
     }
 
+
+    /**
+     * Create user record
+     * 
+     *
+     */
+    protected function create()
+    {
+
+    	return view('user.create');
+
+    }     
+
+
+    /**
+     * Edit User record
+     * 
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    protected function edit()
+    {
+
+        $user = User::find($id); 
+
+    	return view('user.edit');
+
+    }  
+    
     
     /**
-     * [register description]
+     * Update User record
+     * 
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    protected function update()
+    {
+
+        $user = User::find($id); 
+
+        $user->update($request->all());
+
+    	return back();
+
+    }    
+
+    
+    /**
+     * register via Ajax 
      * 
      * @param  Request $request [description]
      * @return [type]           [description]

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title', 'Contact Us')
-@section('breadcrumbs', Breadcrumbs::render('contact'))
+@section('breadcrumbs', Breadcrumbs::render('contact.create'))
 
 @section('content')
 	
@@ -38,84 +38,89 @@
 
 				<p class="subtitle is-6">Please fill in form below & we'll get back to you</p> <br/>
 
-				<div class="field">
-					<div class="control">
-						<label class="label">Select Title:</label>
-						<label class="radio">
-							<input type="radio" name="question">
-							Mr
-						</label>
-						<label class="radio">
-							<input type="radio" name="question">
-							Mrs
-						</label>
-						<label class="radio">
-							<input type="radio" name="question">
-							Miss
-						</label>
-						<label class="radio">
-							<input type="radio" name="question">
-							Ms
-						</label>												
-					</div>
-				</div>
+				<form action="{{ route('send') }}" method="POST">
+					
+					{{ csrf_field() }}
 
-				<div class="field">
 					<div class="field">
-						<label class="label">First name</label>    
-						<p class="control">
-							<input class="input is-medium" type="text">
-						</p>
+						<div class="control">
+							<label class="label">Select Title:</label>
+							<label class="radio">
+								<input type="radio" name="title" value="Mr">
+								Mr
+							</label>
+							<label class="radio">
+								<input type="radio" name="title" value="Mrs">
+								Mrs
+							</label>
+							<label class="radio">
+								<input type="radio" name="title" value="Miss">
+								Miss
+							</label>
+							<label class="radio">
+								<input type="radio" name="title" value="Ms">
+								Ms
+							</label>												
+						</div>
 					</div>
-				</div>
 
-				<div class="field is-horizontal">
-					<div class="field-body">
+					<div class="field">
 						<div class="field">
-							<label class="label">Email:</label>
+							<label class="label">Full name</label>    
 							<p class="control">
-								<input class="input is-medium" type="tel">
+								<input class="input is-medium" type="text" name="full_name">
 							</p>
 						</div>
 					</div>
-				</div>
 
-				<div class="field is-horizontal">
-					<div class="field-body">
-						<div class="field">
-							<label class="label">Subject</label>
-							<div class="control">
-								<input class="input is-medium" type="text">
-							</div>
-							<p class="help">
+					<!-- <div class="field is-horizontal">
+						<div class="field-body">
+							<div class="field">
+								<label class="label">Subject</label>
+								<div class="control">
+									<input class="input is-medium" type="text" name="subject">
+								</div>
+								<p class="help">
 
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="field is-horizontal">
-					<div class="field-body">
-						<div class="field">
-							<label class="label">Your Message</label>
-							<div class="control">
-								<textarea class="textarea"></textarea>
+								</p>
 							</div>
 						</div>
-					</div>
-				</div>
+					</div> -->
 
-				<div class="field is-horizontal">
-					<div class="field-body">
-						<div class="field">
-							<div class="control">
-								<button class="button is-black is-medium">
-									SEND
-								</button>
+					<div class="field is-horizontal">
+						<div class="field-body">
+							<div class="field">
+								<label class="label">Email:</label>
+								<p class="control">
+									<input class="input is-medium" type="text" name="email">
+								</p>
 							</div>
 						</div>
 					</div>
-				</div>					
+
+					<div class="field is-horizontal">
+						<div class="field-body">
+							<div class="field">
+								<label class="label">Your Message</label>
+								<div class="control">
+									<textarea class="textarea" name="msg"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="field is-horizontal">
+						<div class="field-body">
+							<div class="field">
+								<div class="control">
+									<button class="button is-black is-medium" type="submit">
+										SEND
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>				
+				</form>					
 			</div>			
 		</div>	
 	</div>		

@@ -8,16 +8,17 @@ require('./bootstrap');
  *  Vue application components
  */
 
-import router from './routes';
+// import router from './routes';
+
 
 
 /**
  *  A Vue application instance 
  */
 new Vue({
-   
+
     el: '#admin',
-    
-    router
+
+    // router
 
 });

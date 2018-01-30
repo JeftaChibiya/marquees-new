@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class AdminController extends Controller
 {      
@@ -15,6 +18,7 @@ class AdminController extends Controller
     {
 
         $this->middleware('auth');
+        $this->middleware('password.reenter', ['only' =>['users']]);
 
     }
 
@@ -27,7 +31,7 @@ class AdminController extends Controller
     public function index()
     {
         
-        return view('backend');
+        return view('admin.index');
 
     }
 
@@ -36,9 +40,11 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function catalog()
     {
-        //
+        
+        return view('admin.catalog');        
+
     }
 
     /**
@@ -47,10 +53,27 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function categories()
     {
-        //
+        
+        return view('admin.categories');          
+
     }
+
+
+    /**
+     * Manage Users
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function users()
+    {
+            
+        return view('admin.users');    
+   
+    }    
+
 
     /**
      * Display the specified resource.
@@ -58,10 +81,41 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function assignRole(Request $request, $id)
     {
-        //
+            
+            return view('auth.password.assign-role');     
     }
+
+
+    /** 
+     *  Verify authenticated User password before action
+     * 
+     */
+    public function verifyPassword(){
+        
+        return view('auth.passwords.verify-password');
+
+    }
+
+
+    /** 
+     *  Verify authenticated User password before action
+     * 
+     */
+    public function postPasswordVerification(Request $request){
+        
+        $hashedPassword = Auth::user()->password;
+        
+        // if passwords match
+        if (Hash::check($request->input('rentered-password'), $hashedPassword)) {
+                        
+            return redirect()->route('manage-users');
+
+        }  
+
+    }    
+
 
     /**
      * Show the form for editing the specified resource.

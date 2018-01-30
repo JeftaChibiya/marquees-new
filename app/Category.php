@@ -22,7 +22,8 @@ class Category extends Model
      */
     protected $fillable = [
     	'name',
-        'brief_desc'
+        'brief_desc',
+        'cover_image'
     ];
 
 

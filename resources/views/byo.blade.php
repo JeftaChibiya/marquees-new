@@ -103,26 +103,26 @@
 								<div class="columns">
 									<div class="column">
 										<p class="subtitle is-5">Party Tents</p>
-										<img src="/images/tent_types/party_tents.jpg" alt="">		      	
+										<!-- <img src="/images/tent_types/party_tents.jpg" alt="">		      	 -->
 									</div>		      
 									<div class="column">
 										<p class="subtitle is-5">Arcum Tents</p>
-										<img src="/images/tent_types/arcum_tents.jpg" alt="">
+										<!-- <img src="/images/tent_types/arcum_tents.jpg" alt=""> -->
 									</div>
 									<div class="column">
 										<p class="subtitle is-5">High Peak Tents</p>
-										<img src="/images/tent_types/arcum_tents.jpg" alt="">
+										<!-- <img src="/images/tent_types/arcum_tents.jpg" alt=""> -->
 									</div>
 								</div>
 								{{-- second --}}
 								<div class="columns">	      
 									<div class="column">
 										<p class="subtitle">Polygon Tents</p>
-										<img src="/images/tent_types/polygon_tents.jpg" alt="">
+										<!-- <img src="/images/tent_types/polygon_tents.jpg" alt=""> -->
 									</div>
 									<div class="column">
 										<p class="subtitle">Curved Tents</p>
-										<img src="/images/tent_types/curved_tents.jpg" alt="">
+										<!-- <img src="/images/tent_types/curved_tents.jpg" alt=""> -->
 									</div>
 								</div>		      
 							</div>

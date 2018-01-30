@@ -13,6 +13,7 @@
     "axios": "^0.16.2",
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
+    "bulma": "^0.6.2",
     "cross-env": "^5.0.5",
     "jquery": "^3.1.1",
     "laravel-mix": "^1.4.2",
@@ -21,7 +22,6 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
-    "bulma": "^0.4.4",
     "font-awesome": "^4.7.0",
     "slick": "^1.12.2",
     "slideout": "^1.0.1",
@@ -29,6 +29,7 @@
     "vee-validate": "^2.0.0-rc.14",
     "vue-easy-slider": "^3.1.2",
     "vue-router": "^2.7.0",
+    "vue-status-indicator": "^1.0.0",
     "vue2-dropzone": "^2.3.5"
   }
 }

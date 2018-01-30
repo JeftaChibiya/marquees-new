@@ -20,7 +20,7 @@
 	  </div>
 	  <div class="tile is-parent">
 	    <article class="tile is-child box">
-	      <div class="content">
+	      <!-- <div class="content">
 	        <p class="subtitle is-4"><b>Dimensions</b></p>
 	        <table class="table">
 	        	<thead>
@@ -54,7 +54,7 @@
 	        		</tr>
 	        	</tbody>
 	        </table>
-	      </div>
+	      </div> -->
 	      <p class="subtitle is-4">Totals: <span class="subtitle is-3">£ <b>@{{ subtotal }}</b></span> including VAT</p>
 	       <br/>
 

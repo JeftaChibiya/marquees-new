@@ -22,7 +22,21 @@ class ProductsController extends Controller
 	    	
 	    	return view();
 
-	    }
+		}
+		
+
+	    /**
+	     * Create product
+	     * 
+	     * @return [type] [description]
+	     */
+	    public function create()
+	    {	    	
+	    	
+	    	return view('product.create');
+
+		}
+				
 
 	    /**
 	     * Edit product

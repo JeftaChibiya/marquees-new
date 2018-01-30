@@ -1,11 +1,10 @@
-
 /**
  * Load all of this project's JavaScript dependencies which, including Vue and other libraries
  */
 require('./bootstrap');
 
 
-import router from './routes';
+// import router from './routes';
 
 /**
  *  Vue application components
@@ -22,18 +21,31 @@ Vue.component('builder', require('./components/Builder.vue'));
 Vue.component('tabs', require('./components/Tabs.vue'));
 Vue.component('tab', require('./components/Tab.vue'));
 
+Vue.component('manage-catalog', require('./components/Catalog.vue'));
+Vue.component('manage-categs', require('./components/ManageCategs.vue'));
+Vue.component('manage-users', require('./components/ManageUsers.vue'));
+
+Vue.component('create-product', require('./components/CreateProduct.vue'));
+Vue.component('create-categ', require('./components/CreateCateg.vue'));
+Vue.component('edit-categ', require('./components/EditCateg.vue'));
+Vue.component('view-categ', require('./components/ViewCateg.vue'));
+Vue.component('create-user', require('./components/CreateUser.vue'));
+
+// Vue.component('create-users', require('./components/CreateUser.vue'));
+
+
 /**
  *  A Vue application instance 
  */
 new Vue({
-   
+
     el: '#app',
-        
-  	router,
+
+    // router,
 
     data: {
-      showModal: false
-    }            
+        showModal: false
+    }
 
 });
 
@@ -42,66 +54,27 @@ new Vue({
 /*=================================
   =  Accordion - Hamburger menu    =
 =================================*/
-  var acc = document.getElementsByClassName("accordion");
-  var i;
+(function($) {
+    $('.accordion > li:eq(0) a').addClass('active').next().slideDown();
 
-  for (i = 0; i < acc.length; i++) {
-      acc[i].onclick = function(){
-          /* Toggle between adding and removing the "active" class,
-          to highlight the button that controls the panel */
-          this.classList.toggle("active");
+    $('.accordion a').click(function(j) {
+        var dropDown = $(this).closest('li').find('.content');
 
-          /* Toggle between hiding and showing the active panel */
-          var panel = this.nextElementSibling;
-          if (panel.style.maxHeight){
-            panel.style.maxHeight = null;
-          } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-          }
-      }
-  }    
+        $(this).closest('.accordion').find('.content').not(dropDown).slideUp();
+
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+        } else {
+            $(this).closest('.accordion').find('a.active').removeClass('active');
+            $(this).addClass('active');
+        }
+
+        dropDown.stop(false, true).slideToggle();
+
+        j.preventDefault();
+    });
+})(jQuery);
+
+// https://codepen.io/MightyShaban/pen/LqrCK
+
 /*=====  End ======*/
-
-
-/*=============================================
-=            Hamburger menu toggling          =
-=============================================*/
-
- 
-
-/*=====  End of Section comment block  ======*/
-  
-
-/*================================================
-=            Slide out menu - backend            =
-================================================*/
-  // Toggle button
-  document.querySelector('.toggle-button').addEventListener('click', function() {
-      slideout.toggle();
-  });
-
-  function close(event) {
-    event.preventDefault();
-    slideout.close();
-  }  
-
-  // slideout panel - admin
-  var slideout = new Slideout({
-      'panel': document.getElementById('panel'),
-      'menu': document.getElementById('menu'),
-      'padding': 230,
-      'tolerance': 70
-  });
-
-  slideout
-    .on('beforeopen', function() {
-      this.panel.classList.add('panel-open');
-    })
-    .on('open', function() {
-      this.panel.addEventListener('click', close);
-    })
-    .on('beforeclose', function() {
-      this.panel.classList.remove('panel-open');
-      this.panel.removeEventListener('click', close);
-  });
-/*=====  End  ======*/

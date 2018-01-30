@@ -1,0 +1,30 @@
+          @foreach($products as $product)
+            <div class="column">
+              <a href="/product/{{ $product->id }}/show">          
+                <img src="/{{ $product->cover->path }}" alt="">
+              </a>  
+            </div>
+          @endforeach
+
+       @if(count($products) > 4)
+        <div class="has-text-centered control-text">
+          <b>SHOW MORE</b> 
+        </div> 
+       @endif
+
+       @foreach($products->chunk(4) as $chunk)
+        <div class="columns is-variable is-1">
+          @foreach($chunk as $product)
+            <div class="column is-one-quarter">
+              <a href="/product/{{ $product->id }}/show">
+                <figure class="image is-1by1">
+                  <img src="/{{ $product->cover->thumbnail_path }}" alt="">                      
+                </figure>              
+              </a>
+              <div class="title-box">
+                <p class="subtitle is-5 roboto"><b>{{ $product->name }}</b></p>                    
+              </div>                
+            </div>
+          @endforeach
+        </div>     
+      @endforeach

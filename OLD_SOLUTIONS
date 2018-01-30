@@ -119,3 +119,30 @@
     });
     });          
 </script>
+
+
+Thurs 18 Jan 2018, 20:54
+ // from Catalog.vue
+<!--  The Modal -->
+<!--   <modal v-if="showModal" :flip-me="flipMe" @toggle="toggleModal()">
+    <div slot="front-header">
+        <b>Gimme the Keys</b>
+    </div>
+    <div slot="front-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quia totam velit amet porro libero ab blanditiis fugiat repudiandae, aperiam, quod ut odit cumque eos modi doloremque laborum delectus commodi!
+    </div>
+    <div slot="front-footer">
+        <button @click="flipModal()"><i class="fa fa-arrow-right"></i></button>
+        <button @click="toggleModal()">Done</button>
+    </div>
+    </modal>  -->   
+
+Sat 20 Jan 2018
+Part - Ideal for engagement parties, weddings, business gatherings and similar events
+
+Wares - For commercial storage, media or fashion events and related events
+
+Accessories - Decoration, flowering, wallpapers
+
+Gazebos - We provide you Gazebos as firm structures, and Pagodas as the type of covering that would be suitable for temporary events
+
