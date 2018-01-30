@@ -1,4 +1,4 @@
-@extends('layouts.backend')
+@extends('layouts.admin')
 @section('title', 'Catalog')
 
 @section('content')
