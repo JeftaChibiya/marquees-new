@@ -12,7 +12,7 @@
                 <div class="column"></div>
                 <div class="column is-one-quarter">
                     
-                    <p class="subtitle is-6 lato black"><b>Please verify your identify.</b></p>   
+                    <p class="subtitle is-5 lato white"><b>Please verify your identify.</b></p>   
 
                         <form action="verify-user" method="POST">
                             
@@ -37,9 +37,7 @@
                                     <button class="button is-success is-rounded" type="submit">Sign in</button>
                                 </p>
                                 <p class="control">
-                                    <a class="is-link-success">
-                                    Forgot password?
-                                    </a>
+                                    <a href="/admin" class="button is-danger is-rounded">Cancel</a>
                                 </p>
                             </div>                             
                         </form>

@@ -12,7 +12,7 @@
     <ul class="menu-section-list">
         <li><a class="white" href="/manage-catalog">Catalog</a></li>
         <li><a href="manage-categories" class="white">Categories</a></li>
-        <li><a href="#" class="white">Attributes</a></li>                                   
+        <li><a href="manage-attributes" class="white">Attributes</a></li>                                   
     </ul>
 </section>
 

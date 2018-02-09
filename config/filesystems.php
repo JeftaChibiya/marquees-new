@@ -70,6 +70,13 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        'dropbox' => [
+            'driver' => 'dropbox',
+            'app_secret' => env('DROPBOX_APP_SECRET'),
+            'token' => env('DROPBOX_TOKEN'),
+            'root'=> 'Uploads/'
+        ],        
+
     ],
 
 ];

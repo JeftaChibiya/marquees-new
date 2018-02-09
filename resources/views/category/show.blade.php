@@ -4,13 +4,13 @@
 
 @section('content')
 	
-  <div class="category-intro bg-center" style="background-image: url(/uploads/cover_images/categs/{{ $category->cover_image }})">     
-    <div class="container">
-      <div>
-        <p class="title is-2 white"> <b>{{ $category->name }}</b></p>         
-      </div>      
-    </div>  
-  </div>    
+    <div class="category-intro bg-center" style="background-image: url({{ $cover_img_link  }})">     
+      <div class="container">
+        <div>
+          <p class="title is-2 white"> <b>{{ $category->name }}</b></p>         
+        </div>      
+      </div>  
+    </div>    
 
 	  <div class="container">
       <div class="container-content">    
@@ -19,18 +19,24 @@
             <p class="subtitle is-6 para">
               <span>
                 {{ $category->brief_desc }}
-                <!-- Ideal for engagement, anniversaries, celebrations and get-togethers.                -->
               </span>
             </p>         
           </div>
         </div>
 
         <div class="columns">
+            @if($category->products)
+              @foreach($category->products as $product)
+                <a href="/product/{{ $product->id }}/show">
+                  <div class="column is-5">              
+                    <img src="{{ $client->getTemporaryLink('/'. $product->id . '/' .  $product->cover->name) }}" style="width: 100%" alt="{{ $product->name }} ">
+                  </div>                  
+                </a>
+              @endforeach
+            @endif
+        </div>      
 
-       </div>      
-
-       
-       <br/> 
+        <br/> 
     
       <p class="subtitle is-5">
         <b>

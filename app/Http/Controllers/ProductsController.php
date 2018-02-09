@@ -6,6 +6,7 @@ use App\Product;
 use App\Category;
 use App\Attribute;
 use Illuminate\Http\Request;
+use Spatie\Dropbox\Client as DropboxClient;
 
 
 class ProductsController extends Controller
@@ -47,11 +48,32 @@ class ProductsController extends Controller
 	    {
 	    	
 	    	$product = Product::with(['images', 'categories'])->find($id);
-	    	$categories = Category::all();
+			$categories = Category::all();
+			
+			$client = new DropboxClient(config('filesystems.disks.dropbox.token'));
+			$product_img_links = $client->listFolder($product->id);					
 	    	
-	    	return view('product.edit', compact('product', 'categories'));
+	    	return view('product.edit', compact('product', 'categories', 'product_img_links', 'client'));
 
-	    }	    
+		}	    
+		
+	    /**
+	     * Edit product
+	     * 
+	     * @return [type] [description]
+	     */
+	    public function view($id)
+	    {
+	    	
+			$categories = Category::all();
+	    	$product = Product::with(['images', 'categories'])->find($id);			
+			$client = new DropboxClient(config('filesystems.disks.dropbox.token'));
+			$product_img_links = $client->listFolder($product->id);
+			
+	    	return view('product.view', compact('product', 'categories', 'product_img_links', 'client'));
+
+		}	
+				
 
 	    /**
 	     * [all description]
@@ -88,11 +110,13 @@ class ProductsController extends Controller
 	    public function show($id)
 	    {
 	    	
-	    	$product = Product::with('images', 'cover')->find($id);
+	    	$product = Product::find($id);
 	    	$categories = $product->categories();
-	    	$attributes = Attribute::all();
+			$attributes = Attribute::all();
+			$client = new DropboxClient(config('filesystems.disks.dropbox.token'));
+			$productImgLinks = $client->listFolder($product->id);				
 
-	    	return view('product.show', compact('product', 'attributes', 'categories'));
+	    	return view('product.show', compact('product', 'attributes', 'categories', 'productImgLinks', 'client'));
 
 	    }   
 

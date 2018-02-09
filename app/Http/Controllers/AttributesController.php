@@ -14,14 +14,26 @@ class AttributesController extends Controller
 	 * [store description]
 	 * @return [type] [description]
 	 */
-	public function all()
+	public function index()
 	{
 
 		$attributes = Attribute::all();
 
-		return $attributes;
+		return view('attribute.index', compact('attributes'));
 
 	} 
+
+
+	/**
+	 * [store description]
+	 * @return [type] [description]
+	 */
+	public function create()
+	{
+
+		return view('attribute.create');
+
+	} 	
 
 
 	/**

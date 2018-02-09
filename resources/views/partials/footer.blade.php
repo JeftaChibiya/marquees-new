@@ -2,6 +2,7 @@
   <div class="container"> 
     <div class="footer-content">
       <div class="columns">
+      
        <!-- contact us  -->
         <div class="column is-3">
           <p class="subtitle modified"><b>European ITM Marquees Head office</b></p><br/>
@@ -26,6 +27,7 @@
             <li></li>
           </ul>
         </div>
+
         <!-- quick links   -->
         <div class="column is-3">
           <p class="subtitle modified"><b>Quick Links</b></p>
@@ -63,6 +65,7 @@
             </li>                        
           </ul>
         </div>
+
         <!-- help & support  -->
         <div class="column is-3">
           <p class="subtitle modified"><b>Help & Support</b></p><br/>     
@@ -77,16 +80,17 @@
             </li>                       
           </ul>             
         </div>
+
         <!-- accreditations  -->
         <div class="column is-3">
           <p class="subtitle modified"><b>Accredited by</b></p><br/>  
-           <img src="/images/credits.jpg" alt="">      
-        </div>        
+           <img src="/images/features/featured_imgs/credits.jpg" alt="">      
+        </div>   
+
         </div> 
       </div>     
       <p class="has-text-centered">
         &copy; {{ date('Y')}} <b>ITM Marquees Ltd.</b>
       </p>
-    </div>
   </div>
 </footer>  

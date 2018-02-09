@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero is-large">
+    <div class="hero is-large original">
         <div class="hero-body">
             <div class="container">
                 <div class="title has-text-centered">
@@ -11,7 +11,7 @@
                 <div class="columns">
                     <div class="column"></div>
                     <div class="column is-3">
-                            <p class="subtitle is-4 lato black">Sign in</p>
+                            <p class="subtitle is-5 lato white">Please sign in</p>
                             <form action="{{ route('login') }}" method="POST">
                                 {{ csrf_field() }}                                
                                 <div class="field">

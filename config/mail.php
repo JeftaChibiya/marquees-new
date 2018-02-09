@@ -42,7 +42,8 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT'),
+    // 587
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +57,7 @@ return [
     */
 
     'from' => [
-        'address' => 'sales.itm-marquees@gmail.com',
+        'address' => env('MAIL_USERNAME'),
         'name' => 'ITM Marquees',
     ],
 
@@ -71,7 +72,8 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION'),
+    // old one: 'tls'
 
     /*
     |--------------------------------------------------------------------------

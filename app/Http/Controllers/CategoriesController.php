@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Image;
 use Storage;
 use App\Category;
+use Spatie\Dropbox\Client as DropboxClient;
 use Illuminate\Http\Request;
 
 
@@ -76,58 +78,7 @@ class CategoriesController extends Controller
 	    	return view('category.view', compact('category'));
 
 		}		
-		
 
-		/**
-	     * Update
-	     * 
-	     * @return [type] [description]
-	     */
-	    public function update($id, Request $request)
-	    {
-			$category = Category::find($id);
-
-			$category->fill($request->except('cover_image'));
-						
-			// $category->name = $request->input('name');
-			// $category->brief_desc = $request->input('brief_desc');
-
-			if($request->hasFile('cover_image'))
-			{
-				$image = $request->file('cover_image');
-				// name = time + original file name
-				$filename = time() . '_' . $image->getClientOriginalName();
-				// store in this folder
-				$image->storeAs('/cover_images/categs',  $filename, 'uploads');
-				// get old file 
-				$oldCoverImg = $category->cover_image;
-				
-				$category->cover_image = $filename;
-
-				// delete the old file from the disk
-				Storage::delete($oldCoverImg);
-			}
-			
-			$category->save();
-
-	    	return back();
-
-	    } 		
-
-
-	    /**
-	     * All categories for public access
-	     * 
-	     * @return [type] [description]
-	     */
-	    public function getCategory($id)
-	    {
-	    	
-	    	$category = Category::with('products')->find($id);
-
-	    	return $category;
-
-	    }	    
 
 
 	    /**
@@ -150,7 +101,7 @@ class CategoriesController extends Controller
 				// name = time + original file name
 				$filename = time() . '_' . $cover_image->getClientOriginalname();
 				// store in this folder
-				$cover_image->storeAs('/cover_images/categs',  $filename, 'uploads');
+				$cover_image->storeAs('/categories/cover_images',  $filename, 'dropbox');
 
 				$category->cover_image = $filename;
 
@@ -162,7 +113,65 @@ class CategoriesController extends Controller
 
 			return redirect()->route('manage-categs', [$category]);
 
-	    }	 
+		}
+		
+		
+		
+
+		/**
+	     * Update
+	     * 
+	     * @return [type] [description]
+	     */
+	    public function update($id, Request $request)
+	    {
+			$category = Category::find($id);
+
+			$category->fill($request->except('cover_image'));
+						
+			// $category->name = $request->input('name');
+			// $category->brief_desc = $request->input('brief_desc');
+
+			if($request->hasFile('cover_image'))
+			{
+				$image = $request->file('cover_image');
+				// name = time + original file name
+				$filename = time() . '_' . $image->getClientOriginalName();
+				// store in this folder
+				$image->storeAs('/categories/cover_images',  $filename, 'dropbox');
+				// get old file 
+				$oldCoverImg = $category->cover_image;
+				
+				$category->cover_image = $filename;
+
+				// delete the old file from the disk
+				Storage::delete($oldCoverImg);
+			}
+			
+			$category->save();
+
+	    	return back();
+
+	    } 		
+
+
+
+
+	    /**
+	     * All categories for public access
+	     * 
+	     * @return [type] [description]
+	     */
+	    public function getCategory($id)
+	    {
+	    	
+	    	$category = Category::with('products')->find($id);
+
+	    	return $category;
+
+	    }	    
+	 
+
 
 	    /**
 	     * [getAll description]
@@ -184,12 +193,14 @@ class CategoriesController extends Controller
 	     * @return [type] [description]
 	     */
 	    public function show($id)
-	    {
-	    	
+	    {	    	
 	    	$category = Category::find($id);
-	    	// $products = $category->products;
+			// $products = $category->products;
+			$filename = $category->cover_image;
+            $client = new DropboxClient(config('filesystems.disks.dropbox.token'));
+			$cover_img_link = $client->getTemporaryLink('categories/cover_images/' .  $filename);
 
-	    	return view('category.show', compact('category'));
+	    	return view('category.show', compact('category', 'cover_img_link', 'client'));
 
 	    }    	      
 
@@ -213,5 +224,7 @@ class CategoriesController extends Controller
 
 	        return back();
 
-	    }		    
+		}		
+		
+		// https://learninglaravel.net/send-sms-from-laravel-application
 }

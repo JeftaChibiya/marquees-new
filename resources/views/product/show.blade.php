@@ -13,14 +13,28 @@
 	<div class="tile is-ancestor">
 	  <div class="tile is-parent is-8">
 	    <article class="tile is-child card">
-	    	<figure class="is-1by1">
-	    		<img :src="'/'+product.cover.path" alt="">
-	    	</figure>
-	    </article>
+			<!-- Swiper -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					@foreach($productImgLinks['entries'] as $image)        
+						<div class="swiper-slide">
+							<img src="{{ $client->getTemporaryLink('/'. $product->id . '/' . $image['name']) }}" 
+								onclick="currentSlide(1++)" style="width: 100%" alt="">	
+						</div>
+					@endforeach	       
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>							
+	    </article>		
 	  </div>
+
 	  <div class="tile is-parent">
 	    <article class="tile is-child box">
-	      <!-- <div class="content">
+	      <div class="content">
 	        <p class="subtitle is-4"><b>Dimensions</b></p>
 	        <table class="table">
 	        	<thead>
@@ -54,15 +68,27 @@
 	        		</tr>
 	        	</tbody>
 	        </table>
-	      </div> -->
+	      </div>
 	      <p class="subtitle is-4">Totals: <span class="subtitle is-3">£ <b>@{{ subtotal }}</b></span> including VAT</p>
 	       <br/>
 
 	       <p class="has-text-centered">
-		      <a class="button is-success is-medium" @click="showModal = true" id="show-modal">
+		      <a class="button is-success is-medium" style="width: 100%" @click="showModal = true" id="show-modal">
 		      	REQUEST NON-BINDING OFFER
 		      </a>		       	
 	       </p>
+				 <br/>
+				 <div class="content-para">
+				 	<ul>
+						 <li><b>Product Color:</b> White</li>
+						 <li><b>Frame: </b>
+						 Anodised aluminium alloy forms the main parts of frame, and hot-dip galvanized steel for smaller metal parts.</li>
+					 </ul>
+					 <br/>
+						<div class="has-text-centered control-text">
+								<a href="/help"><b>More Info</b></a> 
+						</div> 									 	
+				 </div>
 
 		  <modal v-if="showModal">
 		    <p class="subtitle is-4" slot="header">REQUEST NON-BINDING OFFER</p>
@@ -176,19 +202,38 @@
 
 	    </article>
 	  </div>
-	</div>	
+	 </div>
+	 
+	 <div class="columns">
+		 <div class="column">
+			 <div class="content-padding">
+				<p class="title is-5">Specification</p>			 
+				<p class="content-para">
+					Product Color: White
+					Span: The common span size for these party tent is 6m, 8m, 10m, 15m, 18m, 20m, 25m, 30m, 40m.
+					Length: Extendable by adding further bays.
+					Frame: The main parts of the frame are made of anodised aluminium alloy
+					whilst smaller metal parts are made of hot-dip galvanized steel.
+					Cover: Roof and sidewall fabric covers are made of double pvc coated flame retardant polyester textile.
+					Fire Safety: Flame retardant
+					Water Resistance: 100% waterproof
+					Key Features: Easy to assemble and dismantle into a small package. 
+					When the structure is assembled, there are no poles inside, leaving the internal space clear for use.				 
+				</p>					 
+			 </div>		 
+		 </div>
+		 <div class="column">
+			 <div class="content-padding">
+				<p class="title is-5">Perfect Accessories</p>	
+				<p class="content-para">
+					Liners, Doors, Carpets, Bars, Ch						
+				</p>				 
+			 </div>	 
+		 </div>
+	 </div>
 
-   <div class="columns">
-  	<div class="column is-8">
-			<transition-group name="fade" tag="div" class="columns">		  		
-  			<div class="column" v-for="image in product.images" :key="image.id">
-  				<img :src="'/'+image.thumbnail_path" alt="">
-  			</div>	  			
-		</transition-group>		  						
-  	</div>
-  </div>		  	  	
+   </div>
   </div>
-</div>
 </product-show>
 
 @endsection

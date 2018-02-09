@@ -56,11 +56,11 @@
                             </div>
                             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                                 <div class="dropdown-content">                                    
-                                    <a tag="a" :href="'/edit-product/'+product.id+'/edit'" class="dropdown-item">
+                                    <a tag="a" :href="'/product/'+product.id+'/edit'" class="dropdown-item">
                                         Edit
                                     </a>		
                                 <hr class="dropdown-divider">								
-                                    <a tag="a" :to="'/view-product/'+product.id+'/view'" class="dropdown-item">
+                                    <a tag="a" :href="'/product/'+product.id+'/view'" class="dropdown-item">
                                         View
                                     </a>											    					      
                                 <hr class="dropdown-divider">

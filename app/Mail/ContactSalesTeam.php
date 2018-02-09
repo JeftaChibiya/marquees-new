@@ -41,7 +41,7 @@ class ContactSalesTeam extends Mailable
     public function build()
     {
         return $this->markdown('email.contact-sales')
-                    ->subject('Action required:  ' . ucfirst($this->title) . '' . ucfirst($this->full_name) . ' is waiting for your reply')
+                    ->subject('Action required:  ' . ucfirst($this->title) .' '. ucfirst($this->full_name) . ' is waiting for your reply')
                     ->from($this->email);
     }
 }

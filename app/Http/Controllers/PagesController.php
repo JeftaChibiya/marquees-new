@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Product;
 use App\Category;
+use App\Attribute;
+use App\CategoriesCache;
 use Illuminate\Http\Request;
+use Spatie\Dropbox\Client as DropboxClient;
 
 
 class PagesController extends Controller
@@ -14,17 +18,12 @@ class PagesController extends Controller
      * Homepage
      * @return [type] [description]
      */
-    public function index()
-    {
-    	
-        // $category = new Category;
-        // $category->name = 'Party';
-        // $user->email = 'admin@marquees.com';        
-        // $user->password = 'password';         
-        // $category->save(); 
+    public function index(CategoriesCache $categoriesCache)
+    {    	
+        $categories = $categoriesCache->all();
+        $client = new DropboxClient(config('filesystems.disks.dropbox.token'));         
 
-        $users = User::all();               
-    	return view('welcome', compact('users'));
+    	return view('welcome', compact('client', 'categories'));
 
     }
 
@@ -61,7 +60,20 @@ class PagesController extends Controller
     	
     	return view('contact');
 
-    }     
+    }  
+    
+    
+    /**
+     * Test Marquees
+     * @return [type] [description]
+     */
+    public function test()
+    {
+        $categories = Category::all();
+        $client = new DropboxClient(config('filesystems.disks.dropbox.token'));
 
+    	return view('test', compact('categories', 'client'));
+
+    }  
 
 }

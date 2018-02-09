@@ -27,7 +27,7 @@
 
         <div id="app">   
 
-            {{-- sidemenu --}}
+            <!-- sidemenu -->
             <nav id="menu" class="slideout-menu original">
                 <header>
                     <div class="menu-brand has-text-centered">
@@ -73,7 +73,7 @@
             </section>                        
             </nav>
             
-            {{-- content --}}
+            <!-- content -->
             <main id="panel" class="slideout-panel panel">
              <div class="container">
                 <!-- Main container -->
@@ -96,7 +96,7 @@
                             <div class="dropdown is-hoverable">
                                 <div class="dropdown-trigger">
                                     <p class="level-item" aria-haspopup="true"  aria-controls="dropdown-menu4">
-                                        <strong>{{ Auth::user()->name }}</strong>
+                                        <strong>{{ Auth::user()->name }} </strong>
                                     </p>    
                                 </div>
                                 <div class="dropdown-menu" id="dropdown-menu4" role="menu">
@@ -122,7 +122,7 @@
             </nav>  
         </div>
 
-        {{-- content --}}
+        <!-- content -->
         <router-view></router-view>
 
 

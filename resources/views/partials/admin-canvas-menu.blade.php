@@ -17,7 +17,7 @@
 
         <div class="navbar-item">
             @if(Auth::user())
-                <a class="second-toggle">
+                <a class="second-toggle with-divider">
                     <strong>{{ Auth::user()->name }}</strong>
                 </a>                                                               
             @endif 

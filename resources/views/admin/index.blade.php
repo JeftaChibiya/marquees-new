@@ -28,28 +28,19 @@
 
         <div class="tile is-parent">
             <article class="tile is-child notification is-dark">
-            <p class="title">Website performance</p>
-            <div class="content">
-            <div class="level">
-                <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">avg Visits / week</p>
-                    <p class="title">-</p>
+                <div class="content">
+                    <div class="level">
+                        <div class="level-item has-text-centered">
+                        <div>
+                            <p class="subtitle is-3 heading"> {{ time() }} </p>
+                        </div>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <p class="subtitle is-3 heading">{{ date('D d M F') }}</p>
+                            </div>
+                        </div>
                 </div>
-                </div>
-                <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">Non-binding requests / week</p>
-                    <p class="title">-</p>
-                </div>
-                </div>
-                <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">Contacts</p>
-                    <p class="title">-</p>
-                </div>
-                </div>
-            </div>
             </div>
             </article>
         </div>

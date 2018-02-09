@@ -19,6 +19,7 @@ class CreateImagesTable extends Migration
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->string('path');
+            $table->string('dropbox_id')->nullable();            
             $table->string('thumbnail_path')->nullable(); // a thumbnail is optional for a photo
             $table->boolean('cover')->default(false); // default value set as 'false' to avoid a 'null' error
             $table->boolean('outside')->default(false);

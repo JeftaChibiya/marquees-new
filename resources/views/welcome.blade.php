@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Home')
+@section('title', 'Marquee Hire')
 
 @section('content')
 
@@ -20,61 +20,37 @@
     <!-- product categories -->
     <div class="container">
     <div class="container-content">
-        <div class="tile is-ancestor">
-        <div class="tile is-parent">
-            <article class="tile is-child party_tents bg-cover">
-                <div class="overlay center-vertically padding-all">                  
-                    <p class="subtitle is-3 white">
-                        Parties
-                    </p>                              
-                </div>         
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child warehouse_tents bg-cover">
-                <div class="overlay center-vertically padding-all">                  
-                    <p class="subtitle is-3 white">
-                        Commercial
-                    </p>                              
-                </div>         
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child gazebos bg-cover">
-                <div class="overlay center-vertically padding-all">                  
-                    <p class="subtitle is-3 white">
-                        Gazebos & Pagodas
-                    </p>                              
-                </div>        
-            </article>
-        </div>           
-        </div> 
-
-        <div class="tile is-ancestor">
-        <!-- accessories -->
-        <div class="tile is-parent is-8">
-            <article class="tile is-child accessories bg-cover">  
-                <div class="overlay center-vertically padding-all">                  
-                    <p class="subtitle is-3 white">
-                        Accesories
-                    </p>                              
-                </div>                 
-            </article>
-        </div>
         
-        <!-- byo -->
-        <div class="tile is-parent">
-            <article class="tile is-child bespoke_designs bg-cover">
-            <a href="/byo">
-                <div class="overlay center-vertically padding-all">                  
-                    <p class="subtitle is-3 white">
-                        Build your own
-                    </p>                              
-                </div>             
-            </a>
-            </article>
-        </div>
-        </div>    
+        @foreach($categories->chunk(3) as $categorySet)   
+            <div class="tile is-ancestor">      
+                @foreach($categorySet as $category)   
+                    <a class="tile is-parent presentation {{ $loop->index == 3 ? 'is-8' : ''}}" href="/category/{{ $category->id }}/products">
+                        <article class="tile is-child bg-cover" style="background-image: url( {{ $client->getTemporaryLink('/categories/cover_images/' .  $category->cover_image) }} )">
+                            <div class="overlay center-vertically padding-all">                  
+                                <p class="subtitle is-3 white">
+                                    {{ $category->name }}
+                                </p>                              
+                            </div>         
+                        </article>               
+                    </a> 
+                    @continue
+                @endforeach
+
+                @if($loop->last)     
+                    <!-- byo -->
+                    <a class="tile is-parent presentation" href="">
+                        <article class="tile is-child bespoke_designs bg-cover">
+                            <div class="overlay center-vertically padding-all">                  
+                                <p class="subtitle is-3 white">
+                                    Build your own
+                                </p>                              
+                            </div>             
+                        </article>
+                    </a>           
+                @endif  
+            </div>                       
+         @endforeach     
+
    </div> 
    </div>
   </div>    

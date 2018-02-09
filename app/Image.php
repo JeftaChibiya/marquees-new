@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
@@ -11,19 +12,19 @@ class Image extends Model
 	    * Save the 'Photo' model to the 'photos' table 
 	    * @var string
 	    */
-      protected $table = 'images'; 
+        protected $table = 'images';      
 
 
       // Fill in the following fields in the 'photos' table
-	    protected $fillable = ['name', 'path', 'thumbnail_path'];
+	    protected $fillable = ['name', 'path', 'dropbox_id', 'thumbnail_path'];
 
 
-       // protected $casts = [
+    //    protected $casts = [
           
-       //    'cover' => false,
-       //    'outside' => false,
-       //    'inside' => false                    
-       // ];      
+    //       'cover' => false,
+    //       'outside' => false,
+    //       'inside' => false                    
+    //    ];      
 
       /**
        * Inverse of a one to many relationship between the Photo and Service model (JC - C3398189)
@@ -55,7 +56,7 @@ class Image extends Model
       public function baseDir()
       {
 
-          return 'product/photos';
+          return 'products/images/';
 
       }      
 
@@ -70,8 +71,27 @@ class Image extends Model
 
           $this->path = $this->baseDir() . '/' . $name;
 
-          $this->thumbnail_path = $this->baseDir() . '/tn-' . $name;
+          $this->thumbnail_path = $this->baseDir() . '/thumbnail-' . $name;
 
       }
+
+
+      /**   
+       * 
+       *  
+       */     
+    //   public static function boot()
+    //   {
+    //       parent::boot();
+  
+    //       static::creating(function ($image) {
+  
+    //           $image->id = image + 2;
+  
+    //       });
+    //    }      
+
+    //    https://www.sitepoint.com/build-your-own-dropbox-client-with-the-dropbox-api/
+    //   save file in dropbox using store method
    
 }

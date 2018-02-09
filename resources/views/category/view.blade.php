@@ -3,16 +3,15 @@
 @section('content')
 
 <view-categ :category="{{ $category }}" inline-template>
-<div>
-
+	<div>
 		<div class="container">
 			<div class="level">
 				<div class="level-left">
-                        <a href="/manage-categories">
-                            <span class="icon">
-                            <i class="fa fa-angle-double-left"></i>
-                            </span> <span>Back</span>
-                        </a>						
+						<a href="/manage-categories">
+							<span class="icon">
+							<i class="fa fa-angle-double-left"></i>
+							</span> <span>Back</span>
+						</a>						
 					</div>
 				</div>
 		</div>			

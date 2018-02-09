@@ -3,6 +3,8 @@
 namespace App;
 
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Spatie\Dropbox\Client as DropboxClient;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 
@@ -49,9 +51,15 @@ class AddImagesToProduct
 
           $image = $this->product->addImage($this->makeimage()); // add image 
 
-          $this->file->move($image->baseDir(), $image->name); // move to directory 
+          $this->file->storeAs($this->product->id . '/', $image->name, 'dropbox'); // move to directory 
 
-          $this->thumbnail->make($image->path, $image->thumbnail_path); // make thumbnail
+          $client = new DropboxClient(config('filesystems.disks.dropbox.token'));
+          
+          $imageData = $client->getMetadata($this->product->id . '/' . $image->name); 
+          
+          $image->update(['dropbox_id' => $imageData['id']]);          
+
+        //   $this->thumbnail->make($image->path, $image->thumbnail_path); // make thumbnail
 
     }
 
@@ -74,11 +82,9 @@ class AddImagesToProduct
     protected function makeFileName()
     {
 
-          $name = sha1( Carbon::now()->year . $this->file->getClientOriginalName());
+          $name = time() . '_' . $this->file->getClientOriginalname();
 
-          $extension = $this->file->getClientOriginalExtension();
-
-          return "{$name}.{$extension}";
+          return "{$name}";
 
     }
 

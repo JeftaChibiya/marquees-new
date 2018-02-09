@@ -7,11 +7,14 @@ use App\Image;
 use App\Product;
 use App\AddImagesToProduct;
 use Illuminate\Http\Request;
+use Spatie\Dropbox\Client as DropboxClient;
 use App\Http\Requests\AddProductImagesRequest;
+
 
 
 class ImagesController extends Controller
 {
+
 
     /**
      * Upload a photo and assign it to a given service item
@@ -28,11 +31,13 @@ class ImagesController extends Controller
         $image = $request->file('file');	      
 
         // Make a new instance of the 'AddPhotoToService' class
-        (new AddImagesToProduct($product, $image))->save();
+        (new AddImagesToProduct($product, $image))->save();     
 
         return $image;
 
     }
+
+
 
     /**
      * Delete the photo along with the image files related to it
@@ -62,10 +67,11 @@ class ImagesController extends Controller
      * @return
      */
 
-    public function update($id, Request $request)
+    public function update($dropbox_id, Request $request)
     {
 
-        $image = Image::find($id);
+        // find image where dropbox_id value matches dropbox_id passed through
+        $image = Image::where('dropbox_id', $dropbox_id)->firstOrFail();
 
         $image->cover = $request->has('cover');
 

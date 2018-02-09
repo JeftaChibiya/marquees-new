@@ -28,9 +28,11 @@ Vue.component('manage-users', require('./components/ManageUsers.vue'));
 Vue.component('create-product', require('./components/CreateProduct.vue'));
 Vue.component('create-categ', require('./components/CreateCateg.vue'));
 Vue.component('edit-categ', require('./components/EditCateg.vue'));
+Vue.component('edit-product', require('./components/EditProduct.vue'));
 Vue.component('view-categ', require('./components/ViewCateg.vue'));
 Vue.component('create-user', require('./components/CreateUser.vue'));
-
+Vue.component('manage-attributes', require('./components/ManageAttributes.vue'));
+Vue.component('create-attribute', require('./components/CreateAttribute.vue'));
 // Vue.component('create-users', require('./components/CreateUser.vue'));
 
 
@@ -49,6 +51,30 @@ new Vue({
 
 });
 
+$(document).ready(function() {
+    $(".animsition").animsition({
+        inClass: 'fade-in',
+        outClass: 'fade-out',
+        inDuration: 1500,
+        outDuration: 800,
+        linkElement: '.animsition-link',
+        // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+        loading: true,
+        loadingParentElement: 'body', //animsition wrapper element
+        loadingClass: 'animsition-loading',
+        loadingInner: '', // e.g '<img src="loading.svg" />'
+        timeout: false,
+        timeoutCountdown: 5000,
+        onLoadEvent: true,
+        browser: ['animation-duration', '-webkit-animation-duration'],
+        // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+        // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+        overlay: false,
+        overlayClass: 'animsition-overlay-slide',
+        overlayParentElement: 'body',
+        transition: function(url) { window.location.href = url; }
+    });
+});
 
 
 /*=================================
