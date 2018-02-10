@@ -12,6 +12,7 @@
                     <div class="column"></div>
                     <div class="column is-3">
                             <p class="subtitle is-5 lato white">Please sign in</p>
+                            
                             <form action="{{ route('login') }}" method="POST">
                                 {{ csrf_field() }}                                
                                 <div class="field">
