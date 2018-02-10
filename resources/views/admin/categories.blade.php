@@ -37,7 +37,7 @@
                     </thead>
                     <!-- body -->
                     <tbody>	             	
-                        <tr v-for="(category, index) in categories">
+                        <tr v-for="(category, index) in categories" v-if="categories.length">
                         <td>@{{ category.id }}</td>
                         <td>@{{ category.name | capitalize }}</td>
                         <td>
@@ -68,7 +68,7 @@
                             </div>				      	
                         </td>			      
                         </tr>
-                        <tr><span v-else> No categories in the database</span></tr>			    
+                        <tr><span v-if="! categories.length"> No categories in the database</span></tr>			    
                     </tbody>
                     </table>				
                 </div>
