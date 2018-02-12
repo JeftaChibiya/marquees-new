@@ -3,13 +3,13 @@ import VueRouter from 'vue-router';
 import Form from './utilities/Form';
 import Errors from './utilities/Errors';
 import Slideout from 'slideout';
+import Slick from 'slick-carousel';
 
 window.Form = Form;
 window.Errors = Errors;
-window.Slick = require('slick-carousel');
+window.Slick = Slick;
 window.Slideout = Slideout;
 window.animsition = require('animsition');
-
 window.Vue = require('vue');
 
 

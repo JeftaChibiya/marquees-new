@@ -76,4 +76,7 @@ class PagesController extends Controller
 
     }  
 
+    // For creating permanent links to dropbox
+    // https://blog.fortrabbit.com/new-app-cloud-storage-dropbox
+
 }

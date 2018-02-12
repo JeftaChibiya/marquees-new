@@ -29,22 +29,22 @@
 
       <!-- Mobile presentation -->
       <div class="usp-slider is-hidden-desktop">
-        <p class="has-text-centered quick-detail">
+        <h2 class="has-text-centered quick-detail">
           <span class="icon">
             <i class="fa fa-credit-card" aria-hidden="true"></i>
           </span> &nbsp;   NO CREDIT CARD FEES
-        </p>
-        <p class="has-text-centered quick-detail">
+        </h2>
+        <h2 class="has-text-centered quick-detail">
             <span class="icon">
               <i class="fa fa-handshake-o" aria-hidden="true"></i>
             </span> &nbsp;     
             PERSONALISED SERVICE
-        </p>
-        <p class="has-text-centered quick-detail">
+        </h2>
+        <h2 class="has-text-centered quick-detail">
             <span class="icon">
               <i class="fa fa-truck" aria-hidden="true"></i>
             </span> &nbsp;    FAST DELIVERY
-        </p>
+        </h2>
       </div>       
 
      @else

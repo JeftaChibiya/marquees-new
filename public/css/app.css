@@ -11838,6 +11838,10 @@ body {
     width: 165px;
     height: auto;
   }
+
+  .navbar > .container {
+    padding-left: 1rem;
+  }
 }
 
 .home-intro {
@@ -11965,22 +11969,6 @@ a.active:after {
 
 /* Home page divs */
 
-.party_tents {
-  background-image: url("/images/features/featured_imgs/party_tent.jpg");
-}
-
-.gazebos {
-  background-image: url("/images/features/featured_imgs/gazebos.jpg");
-}
-
-.warehouse_tents {
-  background-image: url("/images/features/featured_imgs/warehs_tent.jpg");
-}
-
-.accessories {
-  background-image: url("/images/features/featured_imgs/wedding_deco.jpeg");
-}
-
 .real_parties {
   background-image: url("/images/features/party/4.jpg");
 }
@@ -11994,7 +11982,7 @@ a.active:after {
 }
 
 .category-intro {
-  padding: 3% 0;
+  padding: 0 0 3% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12110,7 +12098,7 @@ input[type=text]:focus {
 
 /*----------  .container  ----------*/
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .container {
     max-width: 1200px;
     width: 1190px;

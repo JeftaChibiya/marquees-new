@@ -58484,6 +58484,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utilities_Errors__ = __webpack_require__("./resources/assets/js/utilities/Errors.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_slideout__ = __webpack_require__("./node_modules/slideout/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_slideout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_slideout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_slick_carousel__ = __webpack_require__("./node_modules/slick-carousel/slick/slick.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_slick_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_slick_carousel__);
+
 
 
 
@@ -58492,10 +58495,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 window.Form = __WEBPACK_IMPORTED_MODULE_2__utilities_Form__["a" /* default */];
 window.Errors = __WEBPACK_IMPORTED_MODULE_3__utilities_Errors__["a" /* default */];
-window.Slick = __webpack_require__("./node_modules/slick-carousel/slick/slick.js");
+window.Slick = __WEBPACK_IMPORTED_MODULE_5_slick_carousel___default.a;
 window.Slideout = __WEBPACK_IMPORTED_MODULE_4_slideout___default.a;
 window.animsition = __webpack_require__("./node_modules/animsition/dist/js/animsition.js");
-
 window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 
 try {

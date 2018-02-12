@@ -12,7 +12,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <link href="https://fonts.googleapis.com/css?family=Overlock:700!" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
 
@@ -99,7 +100,16 @@
 
         @include('partials.footer')
 
-        <script src="{{ mix('js/app.js') }}"></script>              
+        <script src="{{ mix('js/app.js') }}"></script>      
+
+        <script>
+            $('.usp-slider').slick({
+                vertical: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                speed: 300
+            });                 
+        </script>                
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
         
@@ -169,17 +179,6 @@
                 this.panel.removeEventListener('click', close);
             });           
         </script>             
-            
-        <script>
-            $(document).ready(function(){
-                $('.usp-slider').slick({
-                vertical: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                speed: 300
-                }); 
-            });                   
-        </script>
 
     </body>
 </html>

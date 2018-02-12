@@ -33,7 +33,6 @@
                             </div>         
                         </article>               
                     </a> 
-                    @continue
                 @endforeach
 
                 @if($loop->last)     
