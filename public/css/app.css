@@ -12098,10 +12098,10 @@ input[type=text]:focus {
 
 /*----------  .container  ----------*/
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .container {
     max-width: 1200px;
-    width: 1190px;
+    width: 95%;
   }
 }
 

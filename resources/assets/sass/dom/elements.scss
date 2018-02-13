@@ -606,18 +606,13 @@ input[type=text]:focus {
     }
 }
 
-// @media screen and (min-width: 1008px){
-//     .container > .navbar {
-//         margin-left: 0
-//     }
-// }
 
 /*----------  .container  ----------*/
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1200px) {
     .container {
         max-width: 1200px;
-        width: 1190px
+        width: 95%
     }
 }
 
