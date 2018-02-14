@@ -26,7 +26,7 @@ class CategcacheServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        App::bind('App\CategoriesCache', function () {
+        App::bind('App\Categories', function () {
 
             return new CacheableCategories(new EloquentCategories);
 

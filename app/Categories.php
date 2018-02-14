@@ -2,7 +2,7 @@
 
 namespace App;
 
-interface CategoriesCache
+interface Categories
 {
 
     /**

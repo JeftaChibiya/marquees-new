@@ -181,7 +181,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\DropboxServiceProvider::class,
         App\Providers\CategcacheServiceProvider::class,
-
+        Approached\LaravelImageOptimizer\ServiceProvider::class,
     ],
 
     /*
@@ -233,7 +233,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,  
-        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,              
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,           
     ],
 
 ];

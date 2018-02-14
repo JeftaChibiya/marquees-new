@@ -25,7 +25,7 @@
             <div class="tile is-ancestor">      
                 @foreach($categorySet as $category)   
                     <a class="tile is-parent presentation {{ $loop->index == 3 ? 'is-8' : ''}}" href="/category/{{ $category->id }}/products">
-                        <article class="tile is-child bg-cover" style="background-image: url( {{ $client->getTemporaryLink('categories/cover_images/' .  $category->cover_image) }} )">
+                        <article class="tile is-child bg-cover" style="background-image: url( {{ $client->getTemporaryLink('/categories/cover_images/' .  $category->cover_image) }} )">
                             <div class="overlay center-vertically padding-all">                  
                                 <p class="subtitle is-3 white">
                                     {{ $category->name }}

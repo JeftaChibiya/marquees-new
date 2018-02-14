@@ -44,7 +44,11 @@ Route::get('verify-password', 'AdminController@verifyPassword');
 Route::post('verify-user', 'AdminController@postPasswordVerification');
 
 // POSTS
+
 Route::post('category', 'CategoriesController@store');
+Route::patch('/update-category/{id}', 'CategoriesController@update');
+
+
 Route::post('products', 'ProductsController@store');
 Route::post('attribute', 'AttributesController@store');
 Route::post('/register-user', 'UsersController@register');
@@ -53,7 +57,6 @@ Route::post('/send', 'ContactController@send')->name('send');
 
 // PATCHING / UPDATING
 Route::patch('/product/{id}', 'ProductsController@update');
-Route::patch('/update-category/{id}', 'CategoriesController@update');
 Route::patch('image/{dropbox_id}', 'ImagesController@update');
 //add image to product 
 Route::post('product/{id}/images', ['as' => 'product_images_path', 'uses' =>'ImagesController@store']);

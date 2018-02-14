@@ -3,21 +3,21 @@
 namespace App;
 
 use Cache;
-use App\CategoriesCache;
+use App\Categories;
 
 /**
  * CacheableCategoryItems is a class to enable optional caching of Category items (JC, C3398189)
  * Created 11.11.2016 (JC, C3398189)
  */
 
-class CacheableCategories implements CategoriesCache{
+class CacheableCategories implements Categories{
 
     /**
      * Import the service items instance (JC, C3398189)
      * @var
      */
 
-    protected $categoriesCache;
+    protected $categories;
 
 
     /**
@@ -25,10 +25,10 @@ class CacheableCategories implements CategoriesCache{
      * @param
      */
 
-    public function __construct($categoriesCache)
+    public function __construct($categories)
     {
 
-        $this->categoriesCache = $categoriesCache;
+        $this->categories = $categories;
 
     }
 
@@ -42,9 +42,9 @@ class CacheableCategories implements CategoriesCache{
     public function all()
     {
         // Decorate method, in this case by caching its output
-        return Cache::remember('categoriesCache.all', 60 * 60, function() {
+        return Cache::remember('categories.all', 60 * 60, function() {
 
-            return $this->categoriesCache->all();
+            return $this->categories->all();
 
         });
 

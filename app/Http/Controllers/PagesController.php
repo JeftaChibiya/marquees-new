@@ -6,7 +6,7 @@ use App\User;
 use App\Product;
 use App\Category;
 use App\Attribute;
-use App\CategoriesCache;
+use App\Categories;
 use Illuminate\Http\Request;
 use Spatie\Dropbox\Client as DropboxClient;
 
@@ -18,9 +18,10 @@ class PagesController extends Controller
      * Homepage
      * @return [type] [description]
      */
-    public function index(CategoriesCache $categoriesCache)
+    public function index(Categories $categories)
     {    	
-        $categories = $categoriesCache->all();
+        $categories = $categories->all();
+
         $client = new DropboxClient(config('filesystems.disks.dropbox.token'));         
 
     	return view('welcome', compact('client', 'categories'));

@@ -9,7 +9,7 @@ namespace App;
  * Below is an ordinary Eloquent query to get all category Items (JC, C3398189)
  */
 
-class EloquentCategories implements CategoriesCache{
+class EloquentCategories implements Categories{
 
 
   /**

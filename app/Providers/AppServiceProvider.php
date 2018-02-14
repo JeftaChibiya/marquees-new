@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Auth;
+use App;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,7 +28,8 @@ class AppServiceProvider extends ServiceProvider
             $user = Auth::user();
             $view->with(compact('user')); // share variable categories
 
-        });        
+        });   
+        
     }
 
     /**
