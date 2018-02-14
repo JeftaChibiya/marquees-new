@@ -181,7 +181,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\DropboxServiceProvider::class,
         App\Providers\CategcacheServiceProvider::class,
-        Approached\LaravelImageOptimizer\ServiceProvider::class,
     ],
 
     /*
