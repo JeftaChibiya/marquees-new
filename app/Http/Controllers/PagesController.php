@@ -20,7 +20,7 @@ class PagesController extends Controller
      */
     public function index(Categories $categories)
     {    	
-        $categories = $categories->all();
+        $categories = Category::all();
 
         $client = new DropboxClient(config('filesystems.disks.dropbox.token'));         
 

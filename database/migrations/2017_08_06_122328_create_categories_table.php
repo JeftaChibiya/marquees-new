@@ -25,7 +25,13 @@ class CreateCategoriesTable extends Migration
             $table->integer('category_id');
             $table->integer('product_id'); 
             $table->primary(['category_id', 'product_id']);
-        });                
+        });      
+        
+        Schema::create('category_event', function (Blueprint $table) {          
+            $table->integer('category_id');
+            $table->integer('event_id'); 
+            $table->primary(['category_id', 'event_id']);            
+        });          
     }
 
     /**
@@ -37,5 +43,6 @@ class CreateCategoriesTable extends Migration
     {
         Schema::dropIfExists('categories');        
         Schema::dropIfExists('category_product'); 
+        Schema::dropIfExists('category_event');         
     }
 }

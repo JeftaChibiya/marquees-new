@@ -23,8 +23,8 @@ Route::get('show-categories', 'CategoriesController@getAll')->name('show-categor
 Route::get('categories', 'CategoriesController@all');
 Route::get('manage-attributes', 'AttributesController@index');
 Route::get('/users', 'UsersController@all');
-
 Route::get('/test-view', 'PagesController@test');
+Route::get('/create-real-entity', 'AdminController@createRealEntity');
 
 // Single Item
 Route::get('product/{id}', 'ProductsController@getProduct');
@@ -46,7 +46,11 @@ Route::post('verify-user', 'AdminController@postPasswordVerification');
 // POSTS
 
 Route::post('category', 'CategoriesController@store');
+Route::post('/event', 'EventsController@store');
+Route::get('event.create', 'EventsController@create');
 Route::patch('/update-category/{id}', 'CategoriesController@update');
+Route::get('product.index', 'ProductsController@index');
+Route::get('event.manage', 'EventsController@index')->name('event.manage');
 
 
 Route::post('products', 'ProductsController@store');

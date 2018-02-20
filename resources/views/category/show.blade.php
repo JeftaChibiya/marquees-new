@@ -3,15 +3,18 @@
 @section('breadcrumbs', Breadcrumbs::render('category-products', $category->id))
 
 @section('content')
-	
-    <div class="category-intro bg-center" style="background-image: url({{ $cover_img_link  }})">     
+
+    <!-- category cover image and title -->
+    <div class="category-intro bg-center" style="background-image: url({{ $cover_img_link }})">     
       <div class="container">
         <div>
-          <p class="title is-2 white"> <b>{{ $category->name }}</b></p>         
+          <p class="title is-1 white"> <b>{{ $category->name }}</b></p>         
         </div>      
       </div>  
     </div>    
 
+    <br/>
+    
 	  <div class="container">
       <div class="container-content">    
       <div class="columns">
@@ -23,35 +26,34 @@
             </p>         
           </div>
         </div>
-
-        <div class="columns">
-            @if($category->products)
-              @foreach($category->products as $product)
-                <a href="/product/{{ $product->id }}/show">
-                  <div class="column is-5">              
-                    <img src="{{ $client->getTemporaryLink('/'. $product->id . '/' .  $product->cover->name) }}" style="width: 100%" alt="{{ $product->name }} ">
-                  </div>                  
-                </a>
-              @endforeach
-            @endif
-        </div>      
-
-        <br/> 
-    
-      <p class="subtitle is-5">
-        <b>
-          Call 077 7944 25 91 or click here to request a non-binding quote
-        </b>
-      </p>         
+        
+        <!-- category products -->
+        @isset($category->products)                           
+          @foreach($category->products->chunk(4) as $productSet)           
+            <div class="columns is-0 is-multiline is-mobile">
+                @foreach($productSet as $product)   
+                    <a class="column is-half" href="/product/{{ $product->id }}/show">
+                        <article class="tile is-child product-presentation">               
+                              <img src="{{ $client->getTemporaryLink('/' . $product->id . '/' .  $product->cover['name']) }}" style="width: 100%" alt="{{ $product->name }} ">                                   
+                        </article>               
+                    </a> 
+                @endforeach             
+            </div>                              
+          @endforeach 
+        @endisset
+                       
+        <br/>         
 
         <div class="columns">
           <div class="column is-8">
-            <div class="real_parties bg-cover">
-              <div class="overlay center-all">                  
-                  <p class="subtitle is-5 white">
-                    <b>Real {{ $category->name }}</b>
-                  </p>                              
-              </div>          
+            <div class="bg-cover" style="background-image: url({{ $categoryEventCover }})">
+              <a href="/event/{{ $event->id }}/show">
+                <div class="overlay center-all">                  
+                    <p class="subtitle is-4 white">
+                      <b>Real {{ $category->name }}</b>
+                    </p>                              
+                </div>                 
+              </a>         
             </div>           
           </div>
 

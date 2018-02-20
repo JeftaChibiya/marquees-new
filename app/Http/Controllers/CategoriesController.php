@@ -197,13 +197,14 @@ class CategoriesController extends Controller
 	     */
 	    public function show($id)
 	    {	    	
-	    	$category = Category::find($id);
-			// $products = $category->products;
-			$filename = $category->cover_image;
-            $client = new DropboxClient(config('filesystems.disks.dropbox.token'));
-			$cover_img_link = $client->getTemporaryLink('categories/cover_images/' .  $filename);
+			$category = Category::with('products')->find($id);
+			$event = $category->events->first();
+			$client = new DropboxClient(config('filesystems.disks.dropbox.token'));
+			
+			$cover_img_link = $client->getTemporaryLink('categories/cover_images/' .  $category->cover_image);
+			$categoryEventCover = $client->getTemporaryLink('events/cover_images/' .  $category->events->first()->cover_image);
 
-	    	return view('category.show', compact('category', 'cover_img_link', 'client'));
+	    	return view('category.show', compact('category', 'cover_img_link', 'client', 'categoryEventCover', 'event'));
 
 	    }    	      
 

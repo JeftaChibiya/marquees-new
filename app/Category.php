@@ -30,7 +30,7 @@ class Category extends Model
     /**
      * [products description]
      * 
-     // * @return [type] [description]
+     * @return [type] [description]
      */
     public function products()
     {
@@ -38,6 +38,19 @@ class Category extends Model
     	return $this->belongsToMany(Product::class);
 
     }
+
+
+    /**
+     *  Has Real entities / instances of itself
+     * 
+     * @return [type] [description]
+     */
+    public function events()
+    {
+
+    	return $this->belongsToMany(Event::class);
+
+    }    
 
 
     /**

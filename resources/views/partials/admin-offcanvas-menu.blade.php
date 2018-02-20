@@ -1,7 +1,7 @@
 <nav id="admin" class="slideout-menu original">
     <header>
         <div class="menu-brand has-text-centered">
-            <a href="/backend">
+            <a href="/admin">
                 <img src="/images/branding/19.svg" alt="logo" style="width: 94px; height: auto">                
             </a>
         </div>                    

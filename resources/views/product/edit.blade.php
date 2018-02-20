@@ -10,7 +10,7 @@
 			<div class="level">
 				<div class="level-left">
 					<div class="level-item">
-						<a href="/manage-catalog">
+						<a href="/product.index">
 							<span class="icon">
 							<i class="fa fa-angle-double-left"></i>
 							</span> <span>Back</span>
@@ -83,7 +83,7 @@
 
 						<!-- Assign roles to images -->
 						<div class="columns">
-							@if(isset($product_img_links['entries']))		
+							@if(count($product_img_links))	
 								@foreach($product_img_links['entries'] as $image)
 								<div class="column is-3">
 									<div class="img-container">
@@ -112,7 +112,7 @@
 									</div>	
 								</div>															
 								@endforeach															
-							@endif							
+							@endif
 						</div>						
 
 						<div class="columns">

@@ -237,6 +237,16 @@ body {
     box-sizing: border-box;
 }
 
+.product-presentation {
+    opacity: .9
+}
+
+.product-presentation:hover {
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 2.5s;
+}
+
 
 /* Position the image container (needed to position the left and right arrows) */
 
@@ -479,7 +489,7 @@ a.active:after {
 }
 
 .bg_request {
-    background-image: url('/images/features/featured_imgs/liners.jpg')
+    background-image: url('/images/features/featured_imgs/request-quote.jpg')
 }
 
 .bespoke_designs {

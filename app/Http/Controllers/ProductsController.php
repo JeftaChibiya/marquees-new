@@ -21,7 +21,7 @@ class ProductsController extends Controller
 	    public function index()
 	    {
 	    	
-	    	return view();
+	    	return view('product.index');
 
 		}
 		
@@ -51,11 +51,13 @@ class ProductsController extends Controller
 			$categories = Category::all();
 			
 			$client = new DropboxClient(config('filesystems.disks.dropbox.token'));
+			
 			$product_img_links = $client->listFolder($product->id);					
 	    	
 	    	return view('product.edit', compact('product', 'categories', 'product_img_links', 'client'));
 
 		}	    
+		
 		
 	    /**
 	     * Edit product
@@ -87,6 +89,7 @@ class ProductsController extends Controller
 
 	    }	    
 
+		
 	    /**
 	     * Find individual product
 	     * 
@@ -105,6 +108,7 @@ class ProductsController extends Controller
 
 	    /**
 	     * Contact Marquees
+		 * 
 	     * @return [type] [description]
 	     */
 	    public function show($id)
