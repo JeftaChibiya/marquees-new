@@ -51,10 +51,9 @@ class ProductsController extends Controller
 			$categories = Category::all();
 			
 			$client = new DropboxClient(config('filesystems.disks.dropbox.token'));
-			  
-			$product_img_links = $client->listFolder($product->id);					
+			  			
 	    	
-	    	return view('product.edit', compact('product', 'categories', 'product_img_links', 'client'));
+	    	return view('product.edit', compact('product', 'categories','client'));
 
 		}	    
 		
