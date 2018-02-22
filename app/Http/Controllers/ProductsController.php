@@ -52,13 +52,18 @@ class ProductsController extends Controller
 			
 			$client = new DropboxClient(config('filesystems.disks.dropbox.token'));
 			
-			if(null !== $client->listFolder($product->id)){
+			try {
+			  
+				$product_img_links = $client->listFolder($product->id);
+
+			}
+			catch (\Exception $e) {
 				
-				return $product_img_links = $client->listFolder($product->id);	
-				
-			}				
+				return $errorMessage = $e->getMessage();
+
+			}						
 	    	
-	    	return view('product.edit', compact('product', 'categories', 'product_img_links', 'client'));
+	    	return view('product.edit', compact('product', 'categories', 'product_img_links', 'client'))->with('status', $errorMessage);
 
 		}	    
 		
