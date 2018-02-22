@@ -83,7 +83,7 @@
 
 						<!-- Assign roles to images -->
 						<div class="columns">
-							@if(count($product_img_links))	
+							@isset($product_img_links['entries']))	
 								@foreach($product_img_links['entries'] as $image)
 								<div class="column is-3">
 									<div class="img-container">
@@ -112,7 +112,13 @@
 									</div>	
 								</div>															
 								@endforeach															
-							@endif
+							@endisset
+
+							@empty($product_img_links['entries'])
+								<div class="column is-10 is-mobile is-centered">
+									<p class="subtitle is-4">No images available in database</p>
+								</div>
+							@endempty
 						</div>						
 
 						<div class="columns">

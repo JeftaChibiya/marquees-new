@@ -41,6 +41,10 @@
             </div>                              
           @endforeach 
         @endisset
+
+        @empty($category->products)
+          <p></p>
+        @endempty
                        
         <br/>         
 
