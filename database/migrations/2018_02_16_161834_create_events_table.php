@@ -21,6 +21,12 @@ class CreateEventsTable extends Migration
             $table->string('desc')->nullable();            
             $table->timestamps();
         });
+
+        Schema::create('category_event', function (Blueprint $table) {          
+            $table->integer('category_id');
+            $table->integer('event_id'); 
+            $table->primary(['category_id', 'event_id']);            
+        });         
     }
 
     /**
@@ -31,5 +37,6 @@ class CreateEventsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('events');
+        Schema::dropIfExists('category_event');        
     }
 }
