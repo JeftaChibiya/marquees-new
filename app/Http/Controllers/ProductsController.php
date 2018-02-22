@@ -52,7 +52,11 @@ class ProductsController extends Controller
 			
 			$client = new DropboxClient(config('filesystems.disks.dropbox.token'));
 			
-			$product_img_links = $client->listFolder($product->id);					
+			if(null !== $client->listFolder($product->id)){
+				
+				return $product_img_links = $client->listFolder($product->id);	
+				
+			}				
 	    	
 	    	return view('product.edit', compact('product', 'categories', 'product_img_links', 'client'));
 
