@@ -83,7 +83,42 @@
 
 						<!-- Assign roles to images -->
 						<div class="columns">
+							@isset($product_img_links['entries']))	
+								@foreach($product_img_links['entries'] as $image)
+								<div class="column is-3">
+									<div class="img-container">
+										<img src="{{ $client->getTemporaryLink('/'. $product->id . '/' . $image['name']) }}" style="width: 100%" alt="{{ $image['name'] }}">              
+										<div class="overlay"></div>											
+									</div>								                      
+									
+									<!-- editing controls -->
+									<div class="field">
+										<label class="checkbox">
+										<input type="checkbox" v-model="cover" @click="makeCover({{ json_encode($image) }})">
+											Make Cover
+										</label>								 	   	 		
+									</div>
+									<div class="field">
+										<label class="checkbox">
+										<input type="checkbox">
+										Outside
+										</label>								 	   	 		
+									</div>
+									<div class="field">
+										<label class="checkbox">
+										<input type="checkbox">
+										Inside
+										</label>								 	   	 		
+									</div>	
+								</div>															
+								@endforeach															
+							@endisset
 
+							@empty($product_img_links['entries'])
+								<div class="column is-10 is-mobile is-centered">
+									<p class="subtitle is-4">No images available in database</p>
+								</div>
+							@endempty
 						</div>						
 
 						<div class="columns">
