@@ -48,8 +48,8 @@
         <br/>         
 
         <div class="columns">
-          <div class="column is-8">
-          
+          <div class="column is-8 bg-center" style="background-image: url({{ $categoryEventCover }})">
+            <p class="subtitle is-4 has-text-centered"> {{ $category->name }} </p>          
           </div>
 
           <div class="column">  

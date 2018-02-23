@@ -202,9 +202,9 @@ class CategoriesController extends Controller
 			$client = new DropboxClient(config('filesystems.disks.dropbox.token'));
 			
 			$cover_img_link = $client->getTemporaryLink('categories/cover_images/' .  $category->cover_image);
-			// $categoryEventCover = $client->getTemporaryLink('events/cover_images/' .  $category->events->first()->cover_image);
+			$categoryEventCover = $client->getTemporaryLink('events/cover_images/' .  $category->events->first()->cover_image);
 
-	    	return view('category.show', compact('category', 'cover_img_link', 'client'));
+	    	return view('category.show', compact('category', 'cover_img_link', 'client', 'event', 'categoryEventCover'));
 
 	    }    	      
 
