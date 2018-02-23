@@ -247,6 +247,16 @@ body {
     transition: opacity 2.5s;
 }
 
+.products-show {
+    .columns {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+    .columns.is-gapless:not(:last-child) {
+        margin-bottom: 0
+    }
+}
+
 
 /* Position the image container (needed to position the left and right arrows) */
 

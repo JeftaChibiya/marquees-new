@@ -5,7 +5,7 @@
        <div class="navbar-brand">             
             <!-- logo -->
             <a href="/" class="navbar-brand-img" data-pjax>
-                  <img src="/images/branding/19.svg" alt="logo" style="width: 84px; height: auto; opacity: .93">         
+                  <img src="/images/branding/19.svg" alt="logo" style="width: 77px; height: auto; opacity: .93">         
             </a> 
             
             <div class="div-right is-hidden-desktop">

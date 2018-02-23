@@ -27,21 +27,20 @@
           </div>
         </div>
         
-        <!-- category products -->
-        @isset($category->products)                           
-          @foreach($category->products->chunk(4) as $productSet)           
-            <div class="columns is-0 is-multiline is-mobile">
+        <!-- category products -->                           
+        <div class="products-show">
+          @foreach($category->products->chunk(3) as $productSet)           
+            <div class="columns is-gapless">
                 @foreach($productSet as $product)   
-                    <a class="column is-half" href="/product/{{ $product->id }}/show">
-                        <article class="tile is-child product-presentation">               
-                              <img src="{{ $client->getTemporaryLink('/' . $product->id . '/' .  $product->cover['name']) }}" style="width: 100%" alt="{{ $product->name }} ">                                   
+                    <a class="column {{ $loop->first && $loop->count === 1 ? 'is-4-desktop' : '' }}" href="/product/{{ $product->id }}/show">
+                        <article class="tile is-child product-presentation">                                    
+                              <img src="{{ $client->getTemporaryLink('/' . $product->id . '/' .  $product->cover['name']) }}" style="width: 100%" alt="{{ $product->name }}">                                   
                         </article>               
                     </a> 
                 @endforeach             
             </div>                              
-          @endforeach 
-        @endisset
-
+          @endforeach         
+        </div>
         @empty($category->products)
           <p></p>
         @endempty
@@ -50,15 +49,7 @@
 
         <div class="columns">
           <div class="column is-8">
-            <div class="bg-cover" style="background-image: url({{ $categoryEventCover }})">
-              <a href="/event/{{ $event->id }}/show">
-                <div class="overlay center-all">                  
-                    <p class="subtitle is-4 white">
-                      <b>Real {{ $category->name }}</b>
-                    </p>                              
-                </div>                 
-              </a>         
-            </div>           
+          
           </div>
 
           <div class="column">  
