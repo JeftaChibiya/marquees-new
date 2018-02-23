@@ -48,7 +48,12 @@
         <br/>         
 
         <div class="columns">
-          <div class="column is-8 bg-center" style="background-image: url({{ $categoryEventCover }})">
+          <div class="column is-8">
+            <div class="bg-cover" style="background-image: url({{ $categoryEventCover }})">
+              <div class="overlay center-all">                  
+                <p class="subtitle is-5 white">{{ $category->name }}</p>                              
+              </div>           
+            </div>           
             <p class="subtitle is-4 has-text-centered"> {{ $category->name }} </p>          
           </div>
 
