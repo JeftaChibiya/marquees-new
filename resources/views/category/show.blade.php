@@ -12,34 +12,24 @@
         </div>      
       </div>  
     </div>    
-
-    <br/>
     
 	  <div class="container">
-      <div class="container-content">    
-      <div class="columns">
-        <div class="column is-6">      
+      <div class="container-content">         
             <p class="subtitle is-6 para">
               <span>
                 {{ $category->brief_desc }}
               </span>
             </p>         
-          </div>
-        </div>
         
         <!-- category products -->                           
         <div class="products-show">
-          @foreach($category->products->chunk(3) as $productSet)           
-            <div class="columns is-gapless">
-                @foreach($productSet as $product)   
-                    <a class="column {{ $loop->first && $loop->count === 1 ? 'is-4-desktop' : '' }}" href="/product/{{ $product->id }}/show">
-                        <article class="tile is-child product-presentation">                                    
-                              <img src="{{ $client->getTemporaryLink('/' . $product->id . '/' .  $product->cover['name']) }}" style="width: 100%" alt="{{ $product->name }}">                                   
-                        </article>               
-                    </a> 
-                @endforeach             
-            </div>                              
-          @endforeach         
+          <div id="mygallery">
+            @foreach($category->products as $product)
+              <a href="#">
+                <img src="{{ $client->getTemporaryLink('/' . $product->id . '/' .  $product->cover['name']) }}" style="width: 100%" alt="{{ $product->name }}">
+              </a>
+            @endforeach
+          </div>        
         </div>
         @empty($category->products)
           <p></p>
@@ -48,14 +38,14 @@
         <br/>         
 
         <div class="columns">
-          <div class="column is-8">
-            <div class="bg-cover" style="background-image: url({{ $categoryEventCover }})">
-              <div class="overlay center-all">                  
-                <p class="subtitle is-3 white">{{ $category->name }}</p>                              
-              </div>           
-            </div>                    
-          </div>
-
+          <a href="/event.all" class="column is-8">
+             <div class="bg-cover" style="background-image: url({{ $categoryEventCover }})">
+                <div class="overlay center-all">                  
+                  <p class="subtitle is-3 white">Real {{ $category->name }}</p>                              
+                </div>           
+            </div> 
+          </a>
+                    
           <div class="column">  
             <div class="bg_request bg-cover">
               <div class="overlay center-all">                  

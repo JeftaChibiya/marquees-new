@@ -3,13 +3,22 @@
 namespace App\Http\Controllers;
 
 
-use App\Category;
+use Storage;
 use App\Event;
+use App\Category;
 use Illuminate\Http\Request;
 
 
 class EventsController extends Controller
 {
+
+    public function all()
+    {
+        
+        return view('event.all');
+
+    }
+
 
     /**
      * Display a listing of the resource.
@@ -79,6 +88,7 @@ class EventsController extends Controller
         
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -87,8 +97,11 @@ class EventsController extends Controller
      */
     public function show($id)
     {
+        
         //
+
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -98,8 +111,13 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $event = Event::with(['categories'])->find($id);
+
+        return view('event.edit', compact('event', 'categories'));
+
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -108,11 +126,36 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
-        //
+
+         $event = Event::find($id);
+
+         $event->fill($request->except('cover_image'));                     
+ 
+         if($request->hasFile('cover_image'))
+         {
+             $cover_image = $request->file('cover_image');
+             // name = time + original file name
+             $filename = time() . '_' . $cover_image->getClientOriginalName();
+             // store in this folder
+             $cover_image->storeAs('/events/cover_images', $filename, 'dropbox');
+             // get old file 
+             $oldCoverImg = $event->cover_image;
+             
+             $event->cover_image = $filename;
+ 
+             // delete the old file from the disk
+             Storage::delete($oldCoverImg);
+         }
+         
+         $event->save();
+ 
+         return back();         
+
     }
 
+    
     /**
      * Remove the specified resource from storage.
      *

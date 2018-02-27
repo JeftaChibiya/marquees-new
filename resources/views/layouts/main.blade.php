@@ -17,46 +17,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
 
-        <style>
-            .slider_container {
-                margin: 0 auto;
-                width: 100%
-            }   
-            .swiper-pagination{
-                color: white;
-                font-family: "Open Sans",Helvetica,Arial,sans-serif;                
-                font-weight: bold;
-                font-size: 24px;
-                text-align: left;                
-            }
-            .swiper-pagination-fraction{
-                bottom: 58px;
-                left: 4%
-            }
-            .swiper-container {
-                width: 100%;
-                height: 500px;
-                margin: 0 auto;
-            }
-            .swiper-slide {
-                text-align: center;
-                font-size: 18px;
-                background: #fff;
-                /* Center slide text vertically */
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                -webkit-justify-content: center;
-                justify-content: center;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                -webkit-align-items: center;
-                align-items: center;
-            }                     
-        </style>
     </head>
     <body>
 
@@ -100,7 +60,16 @@
 
         @include('partials.footer')
 
-        <script src="{{ mix('js/app.js') }}"></script>      
+        <script src="{{ mix('js/app.js') }}"></script> 
+
+        <script src="/js/justifiedgrid/jquery.justifiedGallery.min.js"></script>
+
+        <script>
+            $("#mygallery").justifiedGallery({
+                lastRow: 'justify',
+                rowHeight: 200
+            });        
+        </script>
 
         <script>
             $('.usp-slider').slick({

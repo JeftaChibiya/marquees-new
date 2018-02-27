@@ -56,7 +56,7 @@
                             </div>
                             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                                 <div class="dropdown-content">                                    
-                                    <a href="" class="dropdown-item">
+                                    <a href="/event/{{ $event->id }}/edit" class="dropdown-item">
                                         Edit
                                     </a>		
                                 <hr class="dropdown-divider">								

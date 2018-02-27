@@ -45,10 +45,10 @@ class PagesController extends Controller
      * 
      * @return [type] [description]
      */
-    public function findUs()
+    public function about()
     {
 
-        return view('find-us');
+        return view('about');
 
     }
 

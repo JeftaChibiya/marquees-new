@@ -34,13 +34,14 @@
 
       <!-- right-hand side of navbar  -->
         <div class="navbar-end">  
+          <a class="navbar-item white" href="/about-us">
+            About Us
+          </a>          
           <a class="navbar-item white" href="/contact-us">
             Contact
           </a>
           <a class="navbar-item white" href="/help">
-            <span class="icon">
-              <i class="fa fa-info-circle"></i>
-            </span> Help
+            Support
           </a>     
         </div>
     </div> 

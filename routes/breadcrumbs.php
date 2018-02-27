@@ -57,9 +57,16 @@ Breadcrumbs::register('contact.create', function($breadcrumbs)
     $breadcrumbs->push('Contact', route('contact.create'));
 });
 
-// Home > Help page
-Breadcrumbs::register('help', function($breadcrumbs)
+// Home > Support page
+Breadcrumbs::register('support', function($breadcrumbs)
 {
     $breadcrumbs->parent('/');
-    $breadcrumbs->push('Help', route('help'));
+    $breadcrumbs->push('Support', route('support'));
+});
+
+// Home > About us
+Breadcrumbs::register('about', function($breadcrumbs)
+{
+    $breadcrumbs->parent('/');
+    $breadcrumbs->push('About', route('about'));
 });

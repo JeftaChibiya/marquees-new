@@ -4,13 +4,13 @@
       <div class="columns">
       
        <!-- contact us  -->
-        <div class="column is-3">
-          <p class="subtitle modified"><b>European ITM Marquees Head office</b></p><br/>
+        <div class="column">
+          <p class="subtitle modified"><b>European Head office</b></p>
           Wellington House<br/>
           273-275 High Street<br/>
           London
           AL2 1HA       
-          <ul> <br/>        
+          <ul>
             <li>
               <span class="icon">
                 <i class="fa fa-home"></i>
@@ -29,61 +29,78 @@
         </div>
 
         <!-- quick links   -->
-        <div class="column is-3">
+        <div class="column">
           <p class="subtitle modified"><b>Quick Links</b></p>
-          <br/>
           <ul>
             <li>
-              <span class="icon">
-                <i class="fa fa-angle-right"></i>
-              </span> 
-                Home
+              <a href="/" class="black">
+                <span class="icon">
+                  <i class="fa fa-angle-right"></i>
+                </span> 
+                  Home            
+              </a>
             </li>
             <li>
-              <span class="icon">
-                <i class="fa fa-angle-right"></i>
-              </span> 
-                Products              
+              <a href="/show-products" class="black">
+                <span class="icon">
+                  <i class="fa fa-angle-right"></i>
+                </span> 
+                  Products
+              </a>              
             </li>
             <li>
-              <span class="icon">
-                <i class="fa fa-angle-right"></i>
-              </span> 
-                Build Your Own              
+              <a href="/help#byo" class="black">
+                <span class="icon">
+                  <i class="fa fa-angle-right"></i>
+                </span> 
+                  Build Your Own
+              </a>              
             </li>
             <li>
-              <span class="icon">
-                <i class="fa fa-angle-right"></i>
-              </span> 
-                About Us              
+              <a href="/about-us" class="black">
+                <span class="icon">
+                  <i class="fa fa-angle-right"></i>
+                </span> 
+                  About Us
+              </a>              
             </li>
             <li>
-              <span class="icon">
-                <i class="fa fa-angle-right"></i>
-              </span> 
-                Contact Us
+              <a href="/contact-us" class="black">
+                <span class="icon">
+                  <i class="fa fa-angle-right"></i>
+                </span> 
+                  Contact Us
+              </a>
             </li>                        
           </ul>
         </div>
 
         <!-- help & support  -->
-        <div class="column is-3">
-          <p class="subtitle modified"><b>Help & Support</b></p><br/>     
+        <div class="column">
+          <p class="subtitle modified"><b>Help & Support</b></p>     
+           <ul>
             <li>
+              <a href="/support" class="black">
+                <span class="icon">
+                  <i class="fa fa-angle-right"></i>
+                </span>               
                 Customer Support
+              </a>
             </li>
             <li>
-                FAQs              
-            </li>
-            <li>
-                Opening Hours              
-            </li>                       
+              <a href="/support" class="black">
+                <span class="icon">
+                  <i class="fa fa-angle-right"></i>
+                </span>              
+                FAQs
+              </a>              
+            </li>                      
           </ul>             
         </div>
 
         <!-- accreditations  -->
-        <div class="column is-3">
-          <p class="subtitle modified"><b>Accredited by</b></p><br/>  
+        <div class="column">
+          <p class="subtitle modified"><b>Accredited by</b></p>  
            <img src="/images/features/featured_imgs/credits.jpg" alt="">      
         </div>   
 

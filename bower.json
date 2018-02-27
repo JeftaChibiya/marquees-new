@@ -1,0 +1,21 @@
+{
+  "name": "marquees",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Jefta Chibiya <jeftachibiya@hotmail.co.uk>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/JeftaChibiya/marquees-new",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "justifiedGallery": "justified-gallery#^3.6.5"
+  }
+}

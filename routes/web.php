@@ -5,8 +5,8 @@ Auth::routes();
 
 // gets
 Route::get('/', 'PagesController@index')->name('home');
-Route::get('/help', 'PagesController@help')->name('help');
-Route::get('/find-us', 'PagesController@findUs');
+Route::get('/help', 'PagesController@help')->name('support');
+Route::get('/about-us', 'PagesController@about')->name('about');
 Route::get('/contact-us', 'PagesController@contact')->name('contact.create');
 Route::get('admin', 'AdminController@index');
 Route::get('manage-catalog', 'AdminController@catalog');
@@ -42,6 +42,10 @@ Route::get('create-attribute', 'AttributesController@create');
 Route::get('assign-role/{id}', 'AdminController@assignRole');
 Route::get('verify-password', 'AdminController@verifyPassword');
 Route::post('verify-user', 'AdminController@postPasswordVerification');
+Route::get('product.index', 'ProductsController@index');
+Route::get('event.all', 'EventsController@all');
+Route::get('event.manage', 'EventsController@index')->name('event.manage');
+Route::get('event/{id}/edit', 'EventsController@edit')->name('event.edit');
 
 // POSTS
 
@@ -49,8 +53,7 @@ Route::post('category', 'CategoriesController@store');
 Route::post('/event', 'EventsController@store');
 Route::get('event.create', 'EventsController@create');
 Route::patch('/update-category/{id}', 'CategoriesController@update');
-Route::get('product.index', 'ProductsController@index');
-Route::get('event.manage', 'EventsController@index')->name('event.manage');
+Route::patch('/update-event/{id}', 'EventsController@update');
 
 
 Route::post('products', 'ProductsController@store');
@@ -61,6 +64,7 @@ Route::post('/send', 'ContactController@send')->name('send');
 
 // PATCHING / UPDATING
 Route::patch('/product/{id}', 'ProductsController@update');
+Route::patch('/event/{id}', 'EventsController@update');
 Route::patch('image/{dropbox_id}', 'ImagesController@update');
 //add image to product 
 Route::post('product/{id}/images', ['as' => 'product_images_path', 'uses' =>'ImagesController@store']);
