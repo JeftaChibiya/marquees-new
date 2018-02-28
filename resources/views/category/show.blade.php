@@ -25,7 +25,7 @@
         <div class="products-show">
           <div id="mygallery">
             @foreach($category->products as $product)
-              <a href="product/{{ $product->id }}/show">
+              <a href="/product/{{ $product->id }}/show">
                 <img src="{{ $client->getTemporaryLink('/' . $product->id . '/' .  $product->cover['name']) }}" style="width: 100%" alt="{{ $product->name }}">
               </a>
             @endforeach
