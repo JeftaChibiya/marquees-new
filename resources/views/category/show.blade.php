@@ -25,9 +25,9 @@
         <div class="products-show">
           <div id="mygallery">
             @foreach($category->products as $product)
-              <a href="/product/{{ $product->id }}/show">
+              <div>
                 <img src="{{ $client->getTemporaryLink('/' . $product->id . '/' .  $product->cover['name']) }}" style="width: 100%" alt="{{ $product->name }}">
-              </a>
+              </div>
             @endforeach
           </div>        
         </div>
@@ -50,7 +50,9 @@
             <div class="bg_request bg-cover">
               <div class="overlay center-all">                  
                 <p class="subtitle is-5">
-                  <button class="button is-success">Request a quote</button>
+                  <a href="/category/{{ $category->id }}/quote">
+                    <button class="button is-success">Request a quote</button>
+                  </a>
                 </p>                              
               </div>           
             </div>              

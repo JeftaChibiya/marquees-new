@@ -152,3 +152,59 @@ Accessories - Decoration, flowering, wallpapers
 
 Gazebos - We provide you Gazebos as firm structures, and Pagodas as the type of covering that would be suitable for temporary events
 
+https://www.rockmywedding.co.uk/different-tent-types-for-your-wedding/
+
+	<!-- <div class="field is-horizontal">
+			<div class="fields">
+				<div class="control">
+					<label class="label">Telephone:</label>				   	
+				</div>
+				<p class="help">Do not enter the first zero</p>
+			</div>
+		</div>	
+
+		<div class="field is-horizontal">
+			<div class="field-body">
+				<div class="field">
+					<p class="control">
+						<p class="select is-fullwidth">
+							<select name="country_code">
+								<option value="+44 GB/UK">+44 GB/UK</option>
+							</select>				         	
+						</p>
+					</p>
+				</div>
+				<div class="field is-expanded">
+					<p class="control">
+						<input class="input" type="tel" placeholder="Your phone number">
+					</p>
+				</div>			         	
+			</div>	
+		</div> -->
+
+2/3/2018 
+
+// From Contact Form, Title field: Mr, Mrs, Miss etc
+
+					<div class="field">
+						<label class="label">Select Title:</label>						
+						<div class="control {{ $errors->has('title') ? ' is-danger' : '' }}">
+							<label class="radio">
+								<input type="radio" name="title" value="Mr">
+								Mr
+							</label>
+							<label class="radio">
+								<input type="radio" name="title" value="Mrs">
+								Mrs
+							</label>
+							<label class="radio">
+								<input type="radio" name="title" value="Miss">
+								Miss
+							</label>
+							<label class="radio">
+								<input type="radio" name="title" value="Ms">
+								Ms
+							</label>												
+						</div>
+						<p class="help is-danger">{{ $errors->first('title') }}</p>							
+					</div>

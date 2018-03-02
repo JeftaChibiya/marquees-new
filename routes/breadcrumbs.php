@@ -10,6 +10,13 @@ Breadcrumbs::register("/", function($breadcrumbs)
     $breadcrumbs->push('Home', route('home'));
 });
 
+// service steps
+Breadcrumbs::register("service-steps", function($breadcrumbs)
+{
+    $breadcrumbs->parent('/');    
+    $breadcrumbs->push('Our Service', route('service-steps'));
+});
+
 // Home > all product categories
 Breadcrumbs::register('show-categories', function($breadcrumbs)
 {
@@ -24,6 +31,15 @@ Breadcrumbs::register('category-products', function($breadcrumbs, $id)
     $category = Category::findOrFail($id);
     $breadcrumbs->parent('show-categories');
     $breadcrumbs->push(ucfirst($category->name), route('category-products', $category->id));
+
+});
+
+Breadcrumbs::register('category-request', function($breadcrumbs, $id)
+{   
+    
+    $category = Category::findOrFail($id);
+    $breadcrumbs->parent('show-categories');
+    $breadcrumbs->push(ucfirst($category->name), route('category-request', $category->id));
 
 });
 
@@ -42,6 +58,7 @@ Breadcrumbs::register('show-product', function($breadcrumbs, $id)
     $breadcrumbs->push(ucfirst($product->name), route('show-product', $product->id));
 
 });
+
 
 // Home > Build your own Marquee
 Breadcrumbs::register('byo', function($breadcrumbs)

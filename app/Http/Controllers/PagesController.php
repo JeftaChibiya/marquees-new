@@ -61,7 +61,20 @@ class PagesController extends Controller
     	
     	return view('contact');
 
-    }  
+    }
+    
+    
+    /**
+     * Service steps Marquees
+     * 
+     * @return [type] [description]
+     */
+    public function steps()
+    {
+    	
+    	return view('service-steps');
+
+    }    
     
     
     /**

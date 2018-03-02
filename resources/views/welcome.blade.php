@@ -3,6 +3,8 @@
 
 @section('content')
 
+@include('partials.quick-info')
+
 <!-- home intro -->
 <div class="home-intro center-all"> 
   <div class="home-intro-brand">

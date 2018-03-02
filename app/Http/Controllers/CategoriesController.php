@@ -206,8 +206,32 @@ class CategoriesController extends Controller
 
 	    	return view('category.show', compact('category', 'cover_img_link', 'client', 'event', 'categoryEventCover'));
 
-	    }    	      
+		}    
+		
+		
 
+	    /**
+	     * Contact Marquees
+	     * @return [type] [description]
+	     */
+	    public function requestService($id)
+	    {	    	
+			$category = Category::find($id);
+			$client = new DropboxClient(config('filesystems.disks.dropbox.token'));
+			$cover_img_link = $client->getTemporaryLink('categories/cover_images/' .  $category->cover_image);
+
+	    	return view('category.quote', compact('category', 'cover_img_link', 'client'));
+	    }  		
+
+		/**	
+		 * 
+		 */
+	    public function quoteConfirm()
+	    {	    	
+			
+			return view('category.quote-confirmation');
+
+	    } 		
 
 
 	    /**

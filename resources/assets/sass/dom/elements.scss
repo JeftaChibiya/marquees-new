@@ -237,6 +237,10 @@ body {
     box-sizing: border-box;
 }
 
+.products-show {
+    margin-bottom: 8%
+}
+
 .product-presentation {
     opacity: .9
 }
@@ -785,9 +789,9 @@ ol {
     background-repeat: no-repeat;
     background-size: cover;
     background-origin: initial;
-    background-position: 50% 50%;
+    background-position: 9% 43%;
     background-origin: content-box;
-    height: 300px
+    height: 430px
 }
 
 // imagery backgrounds 
@@ -848,6 +852,10 @@ ol {
     padding: 1.25rem
 }
 
+.margin-top {
+    margin-top: 1.3rem
+}
+
 .padding-left {
     padding-left: 1.3rem
 }
@@ -871,6 +879,14 @@ ol {
 
 .black {
     color: black
+}
+
+.is-red {
+    color: #e63900
+}
+
+.is-grey {
+    color: grey
 }
 
 .open-sans {

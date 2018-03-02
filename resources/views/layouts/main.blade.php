@@ -51,7 +51,6 @@
             </div>       
             <main id="panel" class="slideout-panel panel">
             @include('partials.navbar')             
-                @include('partials.quick-info')
                 <div id="pjax-container">
                     @yield('content')
                 </div> 
@@ -67,7 +66,10 @@
         <script>
             $("#mygallery").justifiedGallery({
                 lastRow: 'justify',
-                rowHeight: 200
+                rowHeight: 200,
+                captions: false,
+                imgSelector: '> img',
+                selector: 'div:not(.spinner)'
             });        
         </script>
 

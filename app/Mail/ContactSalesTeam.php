@@ -15,7 +15,6 @@ class ContactSalesTeam extends Mailable
     public $full_name;
     public $email;    
     public $msg;
-    public $title;
 
     
     /**
@@ -23,13 +22,12 @@ class ContactSalesTeam extends Mailable
      *
      * @return void
      */
-    public function __construct($title, $full_name, $email, $msg)
+    public function __construct($full_name, $email, $msg)
     {
 
         $this->full_name = $full_name;        
         $this->email = $email;
         $this->msg = $msg;
-        $this->title = $title;
         
     }
 
@@ -41,7 +39,7 @@ class ContactSalesTeam extends Mailable
     public function build()
     {
         return $this->markdown('email.contact-sales')
-                    ->subject('Action required:  ' . ucfirst($this->title) .' '. ucfirst($this->full_name) . ' is waiting for your reply')
+                    ->subject('Action required:  ' .' '. ucfirst($this->full_name) . ' is waiting for your reply')
                     ->from($this->email);
     }
 }
