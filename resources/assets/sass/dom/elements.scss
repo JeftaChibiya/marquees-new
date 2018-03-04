@@ -36,7 +36,7 @@ body {
     padding-right: 1rem;
     min-height: 100vh;
     overflow-y: scroll;
-    background-color: #f4f6f7;
+    // background-color: #f4f6f7;
     -webkit-overflow-scrolling: touch;
     z-index: 0;
     display: none;
@@ -47,6 +47,13 @@ body {
         color: black;
         padding: 0.5rem 0;
         font-size: 16px
+    }
+    a.navbar-item:hover,
+    a.navbar-item.is-active,
+    a.navbar-link:hover,
+    a.navbar-link.is-active {
+        background-color: transparent;
+        color: white
     }
 }
 
@@ -887,6 +894,16 @@ ol {
 
 .is-grey {
     color: grey
+}
+
+.is-space-grey {
+    background-color: rgb(41, 41, 41);
+    .navbar-item {
+        color: white;
+    }
+    .subtitle {
+        color: rgb(173, 173, 173)
+    }
 }
 
 .open-sans {

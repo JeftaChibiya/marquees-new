@@ -21,7 +21,7 @@
     <body>
 
         <div id="app">          
-            <div id="right-side-menu" class="slideout-menu slideout-menu-right">
+            <div id="right-side-menu" class="slideout-menu is-space-grey slideout-menu-right">
                 <p class="subtitle is-4">MENU</p>
                 <ul>
                 @foreach($categories as $category)
@@ -41,11 +41,7 @@
                         </a>                        
                     </li>
                     <li>
-                        <a class="navbar-item" href="/help">
-                            <span class="icon">
-                            <i class="fa fa-info-circle"></i>
-                            </span> Help
-                        </a>                        
+                        <a class="navbar-item" href="/support"> Support</a>                        
                     </li>
                 </ul>
             </div>       

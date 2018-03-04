@@ -11550,7 +11550,6 @@ body {
   padding-right: 1rem;
   min-height: 100vh;
   overflow-y: scroll;
-  background-color: #f4f6f7;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
   display: none;
@@ -11564,6 +11563,14 @@ body {
   color: black;
   padding: 0.5rem 0;
   font-size: 16px;
+}
+
+.slideout-menu a.navbar-item:hover,
+.slideout-menu a.navbar-item.is-active,
+.slideout-menu a.navbar-link:hover,
+.slideout-menu a.navbar-link.is-active {
+  background-color: transparent;
+  color: white;
 }
 
 .slideout-menu-left {
@@ -12356,6 +12363,18 @@ ol li:before {
 
 .is-grey {
   color: grey;
+}
+
+.is-space-grey {
+  background-color: #292929;
+}
+
+.is-space-grey .navbar-item {
+  color: white;
+}
+
+.is-space-grey .subtitle {
+  color: #adadad;
 }
 
 .open-sans {
