@@ -77,11 +77,11 @@
                                 <img src="images/features/symbols/size-symbol.png" alt="" style="width: 100%">                                 
                             </div>
                             <div class="column">
-                                <p class="subtitle is-4"><b>Calculate the size</b></p>                                 
+                                <p class="subtitle is-4"><b>Calculating size</b></p>                                 
                             </div>
                         </div>                        
                         <div class="padding-left">
-                            <p class="subtitle is-4 is-hidden-mobile"><b>Calculate the size</b></p> 
+                            <p class="subtitle is-4 is-hidden-mobile"><b>Calculating size</b></p> 
                             <div class="content-para">
                                 Factors to consider include: 
                                 <div class="padding-left">
@@ -136,11 +136,11 @@
                                     <img src="images/features/symbols/tent_design.png" alt="" style="width: 100%">                                 
                                 </div>
                                 <div class="column">
-                                    <p class="subtitle is-4"><b>Select Tent Design</b></p>                                 
+                                    <p class="subtitle is-4"><b>Tent Design</b></p>                                 
                                 </div>
                         </div>                         
                         <div class="padding-left">
-                            <p class="subtitle is-4 is-hidden-mobile"><b>Select Tent Design</b></p>  
+                            <p class="subtitle is-4 is-hidden-mobile"><b>Tent Design</b></p>  
                             <p class="content-para">
                                 Choose from 5 different designs of marquees that we offer, 
                                 including party, acrum, high peak, curved and polygon designs.                                    
