@@ -15,7 +15,7 @@
 <div class="div-margin-top">
 <div class="designs-panel">
     <div class="has-text-centered">
-        <img src="/images/features/symbols/popper.svg" alt="event-icon" style="width: 55px; height: auto; opacity: .7">
+        <img src="/images/features/symbols/popper.svg" alt="event-icon" style="width: 65px; height: auto; opacity: .7">
     </div>
     <p class="title has-text-centered is-size-4-mobile is-size-3-desktop"> Designs for your event</p>
 
@@ -58,9 +58,9 @@
     <div class="div-margin-top"> 
       <div class="container">
         <div class="has-text-centered">
-            <img src="/images/features/symbols/take_note.svg" alt="event-icon" style="width: 55px; height: auto; opacity: .7">
+            <img src="/images/features/symbols/take_note.svg" alt="event-icon" style="width: 65px; height: auto; opacity: .7">
         </div>          
-        <p class="title has-text-centered is-size-4-mobile is-size-3-desktop"> Tips for purchasing</p><br/><br/>
+        <p class="title has-text-centered is-size-4-mobile is-size-3-desktop"> Build a Marquee that suits your event</p><br/><br/>
     
         <div class="columns is-mobile">
             <div class="column"></div>
