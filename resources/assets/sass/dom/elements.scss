@@ -416,8 +416,16 @@ body {
     .navbar>.container {
         padding-left: 1rem
     }
+    .designs-panel {
+        // margin-top: 2%;
+        margin-bottom: 3.8rem;
+        .tile.is-parent {
+            padding: 0.6rem
+        }
+    }
 }
 
+// outside the media query above
 .home-intro {
     height: 80vh;
     .home-intro-brand-img {
@@ -438,6 +446,12 @@ body {
     .navbar>.container,
     .quick-info>.container {
         padding: .3rem 0 .3rem 15px
+    }
+    .designs-panel {
+        margin-bottom: 1rem;
+        .tile.is-parent {
+            padding: 0
+        }
     }
 }
 
@@ -464,14 +478,6 @@ body {
     //     top: 50%;
     //     text-align: center
     // }        
-}
-
-.designs-panel {
-    // margin-top: 2%;
-    margin-bottom: 3.8rem;
-    .tile.is-parent {
-        padding: 0.6rem
-    }
 }
 
 .overlay {

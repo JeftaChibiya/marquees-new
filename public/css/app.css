@@ -11921,6 +11921,14 @@ body {
   .navbar > .container {
     padding-left: 1rem;
   }
+
+  .designs-panel {
+    margin-bottom: 3.8rem;
+  }
+
+  .designs-panel .tile.is-parent {
+    padding: 0.6rem;
+  }
 }
 
 .home-intro {
@@ -11946,6 +11954,14 @@ body {
   .quick-info > .container {
     padding: .3rem 0 .3rem 15px;
   }
+
+  .designs-panel {
+    margin-bottom: 1rem;
+  }
+
+  .designs-panel .tile.is-parent {
+    padding: 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -11963,14 +11979,6 @@ body {
   background-size: 100% auto;
   background-origin: center;
   background-image: url("/images/features/featured_imgs/home-intro-bg3.jpg");
-}
-
-.designs-panel {
-  margin-bottom: 3.8rem;
-}
-
-.designs-panel .tile.is-parent {
-  padding: 0.6rem;
 }
 
 .overlay {
