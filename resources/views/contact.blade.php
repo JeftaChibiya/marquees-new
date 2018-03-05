@@ -9,7 +9,7 @@
 	 <div class="container-content">
 		<div class="columns">
 			<div class="column is-5">
-				<p class="subtitle is-4"><b>Get in touch</b></p> <br/>			
+				<p class="subtitle is-4"><b>Get in touch</b></p>	
 				<b>European Head Office </b><br/>
 				Wellington House<br/>
 				273-275 High Street<br/>
@@ -34,7 +34,7 @@
 			</div>		
 
 			<div class="column is-5">
-				<p class="subtitle is-4"><b>General Enquiries</b></p> <br/>
+				<p class="subtitle is-4"><b>General Enquiries</b></p>
 
 				<p class="subtitle is-6">Please fill in form below & we'll get back to you</p>
 

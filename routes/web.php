@@ -5,7 +5,7 @@ Auth::routes();
 
 // gets
 Route::get('/', 'PagesController@index')->name('home');
-Route::get('/help', 'PagesController@help')->name('support');
+Route::get('/support', 'PagesController@help')->name('support');
 Route::get('/about-us', 'PagesController@about')->name('about');
 Route::get('/contact-us', 'PagesController@contact')->name('contact.create');
 Route::get('admin', 'AdminController@index');
