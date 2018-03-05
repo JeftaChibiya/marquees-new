@@ -39,7 +39,7 @@
 
                     @if($loop->last)     
                         <!-- byo -->
-                        <a class="tile is-parent presentation" href="/help#byo">
+                        <a class="tile is-parent presentation" href="/support#byo">
                             <article class="tile is-child bespoke_designs bg-cover">
                                 <div class="overlay center-vertically padding-all">                  
                                     <p class="subtitle is-3 white">
