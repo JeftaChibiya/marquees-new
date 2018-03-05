@@ -40,7 +40,7 @@
           <a class="navbar-item white" href="/contact-us">
             Contact
           </a>
-          <a class="navbar-item white" href="/help">
+          <a class="navbar-item white" href="/support">
             Support
           </a>     
         </div>
