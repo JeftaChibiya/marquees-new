@@ -12321,6 +12321,10 @@ ol li:before {
   padding: .7rem;
 }
 
+.hr-divider {
+  background-color: #f2f2f2;
+}
+
 /*----------  Margin & Padding  ----------*/
 
 .pad_title {
@@ -12518,7 +12522,7 @@ a {
 }
 
 .title.is-1 {
-  font-size: 2.5rem;
+  font-size: 2.96rem;
 }
 
 .title.is-2 {
