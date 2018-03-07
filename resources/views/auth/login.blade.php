@@ -6,12 +6,12 @@
         <div class="hero-body">
             <div class="container">
                 <div class="title has-text-centered">
-                    <img src="/images/branding/22-login.svg" alt="logo" style="width: 105px; height: auto">
+                    <img src="/images/branding/80.svg" alt="logo" style="width: 105px; height: auto">
                 </div>
                 <div class="columns">
                     <div class="column"></div>
                     <div class="column is-3">
-                            <p class="subtitle is-5 lato white">Please sign in</p>
+                            <p class="subtitle is-5 lato white"><b>Please sign in</b></p>
                             
                             <form action="{{ route('login') }}" method="POST">
                                 {{ csrf_field() }}                                
@@ -26,15 +26,17 @@
                                     
                                 </div>  
 
-                                <div class="field is-grouped">
-                                    <p class="control">
-                                        <button class="button is-success is-rounded" type="submit">Sign in</button>
-                                    </p>
-                                    <p class="control">
-                                        <a class="is-link-success">
-                                        Forgot password?
-                                        </a>
-                                    </p>
+                                <div class="level">
+                                    <div class="level-left">
+                                        <div class="level-item">
+                                            <button class="button is-success is-rounded" type="submit">Sign in</button>
+                                        </div>
+                                        <div class="level-item">
+                                            <a class="is-link-success">
+                                            Forgot password?
+                                            </a>
+                                        </div>                                    
+                                    </div>
                                 </div>                                
 
                             </form>

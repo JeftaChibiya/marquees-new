@@ -3,19 +3,19 @@
 @section('content')
 
 <div>
-	<div class="container">
-		<div class="level">
-			<div class="level-left">
-				<div class="level-item">
-					<a href="/event.manage">
-						<span class="icon">
-						<i class="fa fa-angle-double-left"></i>
-						</span> <span>Back</span>
-					</a>						
-				</div>
-			</div>
-		</div>		
-	</div>
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <a href="/event.manage">
+                    <span class="icon">
+                        <i class="fa fa-angle-double-left"></i>
+                    </span> <span>Back</span>
+                </a>						
+            </div>
+        </div>
+    </div>
+	
+	<br/>  
 
 	<!-- page title -->
 	<div class="original notice">

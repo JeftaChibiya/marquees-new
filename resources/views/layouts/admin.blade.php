@@ -32,6 +32,7 @@
                     <div class="container"> 
                         @include('partials.admin-canvas-menu')                         
                     </div>
+                    
                     <!-- content -->
                     @yield('content')     
 

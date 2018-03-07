@@ -6,19 +6,19 @@
 <edit-product :product="{{ $product }}" :categories="{{ $categories }}" inline-template>
 	
 	<div>
-	<div class="container">
-			<div class="level">
-				<div class="level-left">
-					<div class="level-item">
-						<a href="/product.index">
-							<span class="icon">
+		<div class="container">
+			<div class="columns">
+				<div class="column">
+					<a href="/product.index">
+						<span class="icon">
 							<i class="fa fa-angle-double-left"></i>
-							</span> <span>Back</span>
-						</a>						
-					</div>
+						</span> <span>Back</span>
+					</a>						
 				</div>
-			</div>		
+			</div>
 		</div>
+
+		<br/>  
 
 		<!-- page title -->
 		<div class="original notice">

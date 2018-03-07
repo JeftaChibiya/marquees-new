@@ -102,6 +102,15 @@ body {
 }
 
 .with-divider {
-    border-right: 1px solid gray;
-    padding-right: 20%
+    width: 1px;
+    clear: both;
+    background-color: gray;
+}
+
+.container {
+    width: 90%
+}
+
+.toggle-button {
+    cursor: pointer
 }

@@ -11514,7 +11514,7 @@ body {
   font-family: raleway;
   height: 100%;
   color: white;
-  background-color: #003e7b;
+  background-color: #1E488C;
 }
 
 .lato {
@@ -11562,8 +11562,10 @@ body {
   background-color: transparent;
 }
 
-is-link-success {
-  color: #1473e6;
+.is-link-success {
+  color: #e6e6e6;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 navbar-menu.is-white {

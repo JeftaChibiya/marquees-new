@@ -5,10 +5,23 @@
 
 <manage-catalog inline-template>
     <div>
-        <div class="original notice">
         <div class="container">
-            <p class="title is-3 white"><b>Product Catalog</b></p>
+            <div class="columns">
+                <div class="column">
+                    <a href="/manage-catalog">
+                        <span class="icon">
+                        <i class="fa fa-angle-double-left"></i>
+                        </span> <span>Back</span>
+                    </a>						
+                </div>
+            </div>
         </div>
+        <br/> 
+
+        <div class="original notice">
+            <div class="container">
+                <p class="title is-3 white"><b>Marquee Designs</b></p>
+            </div>
         </div>
 
         <div class="container">
@@ -18,13 +31,13 @@
                         <a href="/create-product" class="button">
                             <span class="icon">
                             <i class="fa fa-plus-circle"></i>
-                            </span> <span>ADD PRODUCT</span>
+                            </span> <span>New Design</span>
                         </a>						
                     </div>
                 </div>
             </div>
             <div class="columns">		
-                <div class="column is-10">
+                <div class="column is-10" style="overflow-x: auto">
                     <table class="table is-bordered">
                         <!-- header -->
                     <thead>

@@ -4,30 +4,30 @@
 
 <edit-categ :category="{{ $category }}" inline-template>
 <div>
-	  <div class="container">
-			<div class="level">
-				<div class="level-left">
-					<div class="level-item">
-                        <a href="/manage-categories">
-                            <span class="icon">
-                            <i class="fa fa-angle-left"></i>
-                            </span> <span>Back</span>
-                        </a>						
-					</div>
+		<div class="container">
+			<div class="columns">
+				<div class="column">
+					<a href="/manage-categories">
+						<span class="icon">
+						<i class="fa fa-angle-double-left"></i>
+						</span> <span>Back</span>
+					</a>						
 				</div>
 			</div>
 		</div>
 
-			<!-- page title -->
-			<div class="original notice">
-				<div class="container">
-					<div class="columns">
-						<div class="column is-4 is-offset-4">
-							<p class="title white">Edit @{{ category.name }} </p>	  			
-						</div>
+		<br/>
+
+		<!-- page title -->
+		<div class="original notice">
+			<div class="container">
+				<div class="columns">
+					<div class="column is-4 is-offset-4">
+						<p class="title white">Edit @{{ category.name }} </p>	  			
 					</div>
 				</div>
 			</div>
+		</div>
 
 		  <div class="container">
 			<div class="columns">		

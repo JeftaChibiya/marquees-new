@@ -7,25 +7,24 @@
 	<div>
 			<!-- top controls -->
 			<div class="container">
-				<div class="level">
-					<div class="level-left">
-						<div class="level-item">
-								<a href="/manage-catalog">
-									<span class="icon">
-									<i class="fa fa-angle-double-left"></i>
-									</span> <span>Back</span>
-								</a>						
-						</div>
-					</div>
-				</div>		
-			</div>
+            <div class="columns">
+                <div class="column">
+                    <a href="/manage-catalog">
+                        <span class="icon">
+                        <i class="fa fa-angle-double-left"></i>
+                        </span> <span>Back</span>
+                    </a>						
+                </div>
+            </div>
+        </div>
+        <br/> 
 
 			<!-- page title -->
 			<div class="original notice">
 				<div class="container">
 					<div class="columns">
-						<div class="column is-4 is-offset-4">
-						<p class="title is-3 white"><b>Add Product</b></p>		  			
+						<div class="column is-6 is-offset-3">
+						<p class="title is-3 white"><b>New Design</b></p>		  			
 						</div>
 					</div>
 				</div>
@@ -40,7 +39,7 @@
 							<p class="subtitle"><b>Name & Description</b></p>
 							<div class="field">
 								<label>Name:</label>
-								<input type="text" class="input" v-model="form.name">
+								<input type="text" class="input" v-model="form.name" placeholder="name">
 							</div>
 							
 							<p class="subtitle"><b>Measurements & Sizes</b></p>
@@ -48,11 +47,11 @@
 								<div class="field-body">
 									<div class="field">
 									<label>Span:</label>
-									<input type="text" class="input" v-model="form.span">
+									 <input type="text" class="input" v-model="form.span" placeholder="span">
 									</div>
 									<div class="field">
 									<label>Length:</label>
-									<input type="text" class="input" v-model="form.length">
+									 <input type="text" class="input" v-model="form.length" placeholder="length">
 									</div>							
 								</div>
 							</div>	

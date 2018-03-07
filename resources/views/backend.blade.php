@@ -81,10 +81,8 @@
                     <!-- Left side -->
                     <div class="level-left">
                         <div class="level-item">
-                            <p>
-                               <span class="icon is-medium">
-                                   <i class="fa fa-bars toggle-button" aria-hidden="true"></i>
-                               </span>  MENU                                
+                            <p>  
+                                MENU                                
                             </p>
                         </div>
                     </div>

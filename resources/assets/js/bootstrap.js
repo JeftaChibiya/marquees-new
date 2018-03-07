@@ -11,6 +11,7 @@ window.Slick = Slick;
 window.Slideout = Slideout;
 window.animsition = require('animsition');
 window.Vue = require('vue');
+window.moment = require('moment');
 
 
 try {

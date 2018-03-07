@@ -18,7 +18,7 @@
                         <a href="/create-categ" class="button">
                             <span class="icon">
                             <i class="fa fa-plus-circle"></i>
-                            </span> <span>ADD CATEGORY</span>
+                            </span> <span>New CATEGORY</span>
                         </a>						
                     </div>
                 </div>
@@ -54,10 +54,6 @@
                                 <div class="dropdown-content">
                                 <a :href="'/category/'+category.id+'/edit'" class="dropdown-item">
                                     Edit
-                                </a>
-                                <hr class="dropdown-divider">						      
-                                <a :href="'/category/'+category.id+'/view'" class="dropdown-item">
-                                    View
                                 </a>
                                 <hr class="dropdown-divider">
                                 <a @click="destroy(category)" class="dropdown-item">

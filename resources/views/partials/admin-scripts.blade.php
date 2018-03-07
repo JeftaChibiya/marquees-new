@@ -2,6 +2,17 @@
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}"></script>
 
+<script type="text/javascript">
+    $('#todaysDate').html(moment().format('ddd, D MMMM YYYY'));
+</script>  
+
+<script type="text/javascript">
+    function update() {
+        $('#todaysTime').html(moment().format('hh:mm:ss'));
+    }
+    setInterval(update, 1000);
+</script> 
+
 
 <!-- First instance of slideout menu -->
 <script>

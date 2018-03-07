@@ -5,25 +5,24 @@
 <create-categ inline-template>
 	<div>
 		<div class="container">
-			<div class="level">
-				<div class="level-left">
-					<div class="level-item">
-						<a href="/manage-categories">
-							<span class="icon">
-							<i class="fa fa-angle-double-left"></i>
-							</span> <span>Back</span>
-						</a>						
-					</div>
+			<div class="columns">
+				<div class="column">
+					<a href="/manage-categories">
+						<span class="icon">
+						<i class="fa fa-angle-double-left"></i>
+						</span> <span>Back</span>
+					</a>						
 				</div>
 			</div>
 		</div>
+		<br/>
 
 		<!-- page title -->
 		<div class="original notice">
 		<div class="container">
 			<div class="columns">
 				<div class="column is-4 is-offset-4">
-				<p class="title is-3 white"><b>Add Category</b></p>		  			
+				<p class="title is-3 white"><b>New Category</b></p>		  			
 				</div>
 			</div>
 		</div>
