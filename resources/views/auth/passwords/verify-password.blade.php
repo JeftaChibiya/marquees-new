@@ -6,7 +6,7 @@
     <div class="hero-body">
         <div class="container">
             <div class="title has-text-centered">
-                <img src="/images/branding/22-login.svg" alt="logo" style="width: 105px; height: auto">
+                <img src="/images/branding/80.svg" alt="logo" style="width: 105px; height: auto">
             </div>
             <div class="columns">
                 <div class="column"></div>
@@ -14,7 +14,7 @@
                     
                     <p class="subtitle is-5 lato white"><b>Please verify your identify.</b></p>   
 
-                        <form action="verify-user" method="POST">
+                        <form action="/verify-user" method="POST">
                             
                             {{ csrf_field() }}   
 

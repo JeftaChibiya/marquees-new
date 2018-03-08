@@ -41,7 +41,7 @@
           <a href="/event.all" class="column is-8">
              <div class="bg-cover" style="background-image: url({{ $categoryEventCover }})">
                 <div class="overlay center-all">                  
-                  <p class="subtitle is-3 white">Real {{ $category->name }}</p>                              
+                  <p class="subtitle is-3 white">Real Events</p>                              
                 </div>           
             </div> 
           </a>

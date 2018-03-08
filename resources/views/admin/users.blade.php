@@ -6,7 +6,7 @@
 <div>
 	<div class="original notice">
 	  <div class="container">
-		  <p class="title is-3 white"><b>User Management</b></p>
+		  <p class="title is-3 white"><b>Manage Users</b></p>
 	  </div>
 	</div>
 
@@ -14,10 +14,10 @@
 		<div class="level">
 			<div class="level-left">
 				<div class="level-item">
-					<a href="/create-user" class="button">
+					<a href="/register" class="button">
 							<span class="icon">
 							  <i class="fa fa-plus-circle"></i>
-							</span> <span>ADD USER</span>						
+							</span> <span>NEW USER</span>						
 					</a>
 				</div>
 			</div>

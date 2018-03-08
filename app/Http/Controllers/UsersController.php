@@ -89,4 +89,29 @@ class UsersController extends Controller
 
     }
 
+
+
+
+    /** 
+     * 
+     *  // 
+     * 
+     */
+    public function destroy($id)
+    {
+
+        $user = User::find($id);
+	          
+        $user->delete();
+
+        if(request()->expectsJson()) {
+           
+            return response(['status' => 'User removed']);
+
+        }
+
+        return back();        
+
+    }
+
 }

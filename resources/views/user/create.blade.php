@@ -35,23 +35,25 @@
             <div class="columns">		
                 <div class="column is-4 is-offset-4">
 
-                    <form method="POST" @submit.prevent="onSubmit" @keydown="form.errors.clear()">
+                    <form method="POST" action="{{ route('register') }}">
+                        
+                        {{ csrf_field() }}
 
                         <div class="field">
                             <label>Full Name:</label>
-                            <input type="text" class="input" placeholder="John Doe" v-model="form.name">
+                            <input type="text" class="input" placeholder="John Doe" name="name">
                         </div>
 
                         <div class="field">
                             <label>Email:</label>
-                            <input type="text" class="input" placeholder="johndoe@mail.com" v-model="form.email">
+                            <input type="text" class="input" placeholder="johndoe@mail.com" name="form.email">
                         </div>
 
                         <div class="field is-grouped">
                             <div class="field-body">
                                 <div class="field">
                                 <label>Password:</label>
-                                <input type="text" class="input" placeholder="*****" v-model="form.password">
+                                <input type="text" class="input" placeholder="*****" name="form.password">
                                 </div>
                                 <div class="field">
                                 <label>Confirm Password:</label>

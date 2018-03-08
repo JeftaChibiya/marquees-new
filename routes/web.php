@@ -40,8 +40,6 @@ Route::get('product/{id}/edit', 'ProductsController@edit')->name('edit-product')
 Route::get('product/{id}/view', 'ProductsController@view')->name('view-product');
 Route::get('category/{id}/edit', 'CategoriesController@edit')->name('edit-category');
 Route::get('create-attribute', 'AttributesController@create');
-Route::get('assign-role/{id}', 'AdminController@assignRole');
-Route::get('verify-password', 'AdminController@verifyPassword');
 Route::get('product.index', 'ProductsController@index');
 Route::get('event.all', 'EventsController@all');
 Route::get('event.manage', 'EventsController@index')->name('event.manage');
@@ -54,7 +52,11 @@ Route::get('builder', 'BYOCOntroller@builder');
 // POSTS
 Route::post('category', 'CategoriesController@store');
 Route::post('/event', 'EventsController@store');
+
+Route::get('assign-role/{id}', 'AdminController@assignRole');
+Route::get('verify-password', 'AdminController@verifyPassword');
 Route::post('verify-user', 'AdminController@postPasswordVerification');
+
 Route::patch('/update-category/{id}', 'CategoriesController@update');
 Route::patch('/update-event/{id}', 'EventsController@update');
 Route::post('products', 'ProductsController@store');
@@ -77,3 +79,4 @@ Route::patch('image/{dropbox_id}', 'ImagesController@update');
 // DELETES
 Route::delete('category/{id}', 'CategoriesController@destroy');
 Route::delete('product/{id}', 'ProductsController@destroy');
+Route::delete('user/{id}', 'UsersController@destroy');

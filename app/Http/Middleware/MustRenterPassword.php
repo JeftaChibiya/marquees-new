@@ -23,12 +23,6 @@ class MustRenterPassword
             return redirect('/verify-password');
         }
 
-        if(route('verify-password') && Hash::check($request->input('rentered-password'), $hashedPassword) ){
-            
-            return Route::currentRouteAction();
-
-        }
-
         return $next($request);
     }
 }

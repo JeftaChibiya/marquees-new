@@ -2624,7 +2624,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return value.charAt(0).toUpperCase() + value.slice(1);
     }
   },
-  methods: {}
+  methods: {
+    destroy: function destroy(user) {
+
+      this.form.delete('/user/' + user.id);
+      this.users.splice(this.users.indexOf(user), 1); // using splice also applies the transition     
+    }
+  }
 });
 
 /***/ }),

@@ -22,7 +22,11 @@
         }
     },
     methods: {
-	         	
+	    destroy(user) {
+
+	        this.form.delete('/user/' + user.id);
+	        this.users.splice(this.users.indexOf(user), 1); // using splice also applies the transition     
+	     }  	         	
     }
   }	
 </script>

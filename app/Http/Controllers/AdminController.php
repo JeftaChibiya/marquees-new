@@ -19,7 +19,7 @@ class AdminController extends Controller
     {
 
         $this->middleware('auth');
-        $this->middleware('password.reenter', ['only' =>['users']]);
+        // $this->middleware('password.reenter', ['only' =>['users']]);
 
     }
 
@@ -47,6 +47,7 @@ class AdminController extends Controller
         return view('admin.catalog');        
 
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -111,7 +112,7 @@ class AdminController extends Controller
         // if passwords match
         if (Hash::check($request->input('rentered-password'), $hashedPassword)) {
                         
-            return redirect()->route('manage-users');
+            return redirect('manage-users');
 
         }  
 
